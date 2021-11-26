@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_content_downloads",
+  "info": {
+    "displayName": "Download",
+    "icon": "download",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "Windows",
+        "MacOS",
+        "Linux"
+      ],
+      "required": true
+    },
+    "architecture": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "x86",
+        "x64",
+        "arm"
+      ],
+      "required": true
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "required": true
+    },
+    "Language": {
+      "type": "enumeration",
+      "enum": [
+        "English",
+        "German",
+        "Franch"
+      ]
+    }
+  }
+}
