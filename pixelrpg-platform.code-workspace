@@ -1,0 +1,32 @@
+{
+    "folders": [
+		{
+			"path": ".",
+			"name": "root"
+		},
+		{
+			"path": "apps/backend",
+			"name": "backend (deno)"
+		},
+		{
+			"path": "apps/strapi",
+			"name": "strapi (npm)"
+		},
+		{
+			"path": "apps/theme",
+			"name": "theme (yarn)"
+		},
+		{
+			"path": "packages/riba",
+			"name": "riba (yarn)"
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"Garber",
+			"openapi",
+			"pixelrpg",
+			"strapi"
+		]
+	}
+}

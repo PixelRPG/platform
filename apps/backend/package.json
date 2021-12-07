@@ -1,0 +1,10 @@
+{
+    "name": "@pixelrpg/backend",
+    "scripts": {
+        "start": "deno run --allow-run scripts.ts start",
+        "watch": "deno run --allow-run scripts.ts watch",
+        "openapi": "deno run --allow-run scripts.ts openapi",
+        "pm2:dev": "pm2 start ./pm2.dev.config.js",
+        "pm2:prod": "pm2 start ./pm2.prod.config.js"
+    }
+}
