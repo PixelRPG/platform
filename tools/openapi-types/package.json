@@ -1,0 +1,16 @@
+{
+  "name": "@pixelrpg/openapi-types",
+  "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "openapi-generator": "openapi-generator-cli generate -i ../../apps/strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json -g typescript-fetch -o ./dist/clients --skip-validate-spec",
+    "openapi-typescript": "openapi-typescript ../../apps/strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json --output ./dist/openapi-typescript.ts",
+    "oapi3ts": "node oapi3ts.js --srcPath ../../apps/strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json --destPath ./dist/oapi3ts --separatedFiles true",
+    "dtsgenerator": "dtsgen --out ./dist/dtsgenerator.ts ../../apps/strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json"
+  },
+  "devDependencies": {
+    "@codegena/oapi3ts-cli": "^2.1.10-alpha.8",
+    "@openapitools/openapi-generator-cli": "^2.4.18",
+    "dtsgenerator": "^3.13.2",
+    "openapi-typescript": "^4.4.0"
+  }
+}

@@ -19,6 +19,7 @@
   "workspaces": [
     "apps/*",
     "!apps/strapi",
+    "tools/*",
     "packages/riba/packages/*",
     "packages/riba/backend/*",
     "packages/riba/infra/*",

@@ -1,0 +1,24 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "PixelRPG Platform API Documentation",
+    "description": "",
+    "termsOfService": "",
+    "contact": {
+      "name": "Pascal Garber",
+      "email": "pascal@artandcode.studio",
+      "url": "artandcode.studio"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://strapi.pixelrpg.org:3102/api",
+      "description": "Development server"
+    }
+  ]
+}
