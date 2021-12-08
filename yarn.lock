@@ -2395,7 +2395,6 @@ __metadata:
     babel-loader: ^8.2.3
     babel-plugin-array-includes: ^2.0.3
     bootstrap: ^5.1.3
-    bootstrap-dark: "github:vinorodrigues/bootstrap-dark-5"
     css-loader: ^6.5.1
     eslint: ^8.4.1
     eslint-config-prettier: ^8.3.0
@@ -2410,7 +2409,6 @@ __metadata:
     sass: ^1.44.0
     style-loader: ^3.3.1
     terser-webpack-plugin: ^5.2.5
-    ts-node: ^10.4.0
     typescript: ^4.5.2
     webpack: ^5.65.0
     webpack-cli: ^4.9.1
@@ -7125,17 +7123,6 @@ __metadata:
   version: 1.0.0
   resolution: "boolbase@npm:1.0.0"
   checksum: 3e25c80ef626c3a3487c73dbfc70ac322ec830666c9ad915d11b701142fab25ec1e63eff2c450c74347acfd2de854ccde865cd79ef4db1683f7c7b046ea43bb0
-  languageName: node
-  linkType: hard
-
-"bootstrap-dark@github:vinorodrigues/bootstrap-dark-5":
-  version: 1.1.3
-  resolution: "bootstrap-dark@https://github.com/vinorodrigues/bootstrap-dark-5.git#commit=3b6bf3b877b81ed2221d02a526de8d68a859ae3b"
-  dependencies:
-    bootstrap: ^5.1.3
-  peerDependencies:
-    "@popperjs/core": ^2.10.2
-  checksum: 2f585c2b67625a3f259ec7b0122b6bf00cadfbf0b5dba8ac6de036f934d51356d09843d28c0df6c2c3fa95dec6aae83eaecb469ba38a62400242596cd39667a4
   languageName: node
   linkType: hard
 

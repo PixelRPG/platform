@@ -1,0 +1,56 @@
+// https://github.com/pentzzsolt/sass-is-int/blob/master/_is-int.scss
+@function is-int($val) {
+    @if type-of($value) != number {
+        @warn '`#{$value}` is not a valid number!';
+        @return null;
+    }
+    @return round($value) == $value;
+}
+
+// Overwrites bootstraps mixin, see https://github.com/twbs/bootstrap/blob/main/scss/vendor/_rfs.scss#L312
+// Disable responsive font size
+// And set font family for size
+@mixin font-size($values, $property: font-size) {
+    @if $values != null {
+
+        $val: rfs-value($values);
+        $fluidVal: rfs-fluid-value($values);
+
+        @if type-of($values) != list {
+
+            $value: $values;
+
+            // Cache $value unit
+            $unit: if(type-of($value) == "number", unit($value), false);
+
+            // Convert rem to px
+            @if $unit == rem {
+                $value: if($rfs-unit == px, #{divide($value, $value * 0 + 1) * $rfs-rem-value}px, $value);
+                $unit: px;
+            }
+
+            @if $unit == px {
+
+                // Remove unit from $value for calculations
+                $value: divide($value, $value * 0 + if($unit == px, 1, divide(1, $rfs-rem-value)));
+
+                #{$property}: #{$value}px;
+
+                @if $value >= 16 {
+                    font-family: $font-family-monospace-16px;
+                }
+                @else if $value >= 12 {
+                    font-family: $font-family-monospace-12px;
+                }
+                @else {
+                    font-family: $font-family-monospace-10px;
+                }
+            } @else {
+                #{$property}: $values;
+            }
+        } @else {
+            #{$property}: $values;
+        }
+    }
+};
+  

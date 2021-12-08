@@ -4517,7 +4517,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-loader", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:8.2.3"],
             ["babel-plugin-array-includes", "npm:2.0.3"],
             ["bootstrap", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:5.1.3"],
-            ["bootstrap-dark", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#https://github.com/vinorodrigues/bootstrap-dark-5.git#commit=3b6bf3b877b81ed2221d02a526de8d68a859ae3b"],
             ["css-loader", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:6.5.1"],
             ["eslint", "npm:8.4.1"],
             ["eslint-config-prettier", "virtual:6d3e0644440da2fe9f96cfbfd2fa4e909a8b7a356c934e0b78b45e4369a7460d00c473a4154754f9a0c3f290b160554648601ebdd85cbc0cd280d357724829eb#npm:8.3.0"],
@@ -4532,7 +4531,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["sass", "npm:1.44.0"],
             ["style-loader", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:3.3.1"],
             ["terser-webpack-plugin", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:5.2.5"],
-            ["ts-node", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:10.4.0"],
             ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"],
             ["webpack", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:5.65.0"],
             ["webpack-cli", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:4.9.1"],
@@ -12035,29 +12033,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bootstrap", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:5.1.3"],
             ["@popperjs/core", null],
             ["@types/popperjs__core", null]
-          ],
-          "packagePeers": [
-            "@popperjs/core",
-            "@types/popperjs__core"
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["bootstrap-dark", [
-        ["https://github.com/vinorodrigues/bootstrap-dark-5.git#commit=3b6bf3b877b81ed2221d02a526de8d68a859ae3b", {
-          "packageLocation": "./.yarn/cache/bootstrap-dark-https-f9dcfaa142-2f585c2b67.zip/node_modules/bootstrap-dark/",
-          "packageDependencies": [
-            ["bootstrap-dark", "https://github.com/vinorodrigues/bootstrap-dark-5.git#commit=3b6bf3b877b81ed2221d02a526de8d68a859ae3b"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#https://github.com/vinorodrigues/bootstrap-dark-5.git#commit=3b6bf3b877b81ed2221d02a526de8d68a859ae3b", {
-          "packageLocation": "./.yarn/__virtual__/bootstrap-dark-virtual-3da853c2ca/0/cache/bootstrap-dark-https-f9dcfaa142-2f585c2b67.zip/node_modules/bootstrap-dark/",
-          "packageDependencies": [
-            ["bootstrap-dark", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#https://github.com/vinorodrigues/bootstrap-dark-5.git#commit=3b6bf3b877b81ed2221d02a526de8d68a859ae3b"],
-            ["@popperjs/core", null],
-            ["@types/popperjs__core", null],
-            ["bootstrap", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:5.1.3"]
           ],
           "packagePeers": [
             "@popperjs/core",
@@ -28851,41 +28826,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tsconfig/node14", "npm:1.0.1"],
             ["@tsconfig/node16", "npm:1.0.2"],
             ["@types/node", "npm:16.11.12"],
-            ["@types/swc__core", null],
-            ["@types/swc__wasm", null],
-            ["@types/typescript", null],
-            ["acorn", "npm:8.6.0"],
-            ["acorn-walk", "npm:8.2.0"],
-            ["arg", "npm:4.1.3"],
-            ["create-require", "npm:1.1.1"],
-            ["diff", "npm:4.0.2"],
-            ["make-error", "npm:1.3.6"],
-            ["typescript", "patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"],
-            ["yn", "npm:3.1.1"]
-          ],
-          "packagePeers": [
-            "@swc/core",
-            "@swc/wasm",
-            "@types/node",
-            "@types/swc__core",
-            "@types/swc__wasm",
-            "@types/typescript",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }],
-        ["virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:10.4.0", {
-          "packageLocation": "./.yarn/__virtual__/ts-node-virtual-cae626dbd2/0/cache/ts-node-npm-10.4.0-04cb6e2279-3933ac0a93.zip/node_modules/ts-node/",
-          "packageDependencies": [
-            ["ts-node", "virtual:d48a9db49d094bbf597b2b011fa18478104ea436ecb5720f1784a4b6f63a8bff3d7d544f2eb6f08520f507d1df6e759a4b1657722c5976d4468db38fcbde558f#npm:10.4.0"],
-            ["@cspotcode/source-map-support", "npm:0.7.0"],
-            ["@swc/core", null],
-            ["@swc/wasm", null],
-            ["@tsconfig/node10", "npm:1.0.8"],
-            ["@tsconfig/node12", "npm:1.0.9"],
-            ["@tsconfig/node14", "npm:1.0.1"],
-            ["@tsconfig/node16", "npm:1.0.2"],
-            ["@types/node", null],
             ["@types/swc__core", null],
             ["@types/swc__wasm", null],
             ["@types/typescript", null],

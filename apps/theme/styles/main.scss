@@ -1,13 +1,14 @@
 // bootstrap
 @import 'charset';
-// @import 'fonts';
-@import 'variables/light/index';
+@import 'fonts';
 @import 'bootstrap';
-@import 'variables-bootstrap';
 
 // Riba
 @import '~@ribajs/core';
 @import '~@ribajs/bs5';
+
+// External Components
+@import 'layouts/index';
 
 // External Components
 @import 'components/index';

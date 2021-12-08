@@ -3,9 +3,11 @@
 // Configuration
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "variables/index"; // Overwrites
 @import "~bootstrap/scss/mixins";
+@import "mixins"; // Overwrites
 @import "~bootstrap/scss/utilities";
-
+ 
 // Layout & components
 @import "~bootstrap/scss/root";
 @import "~bootstrap/scss/reboot";
