@@ -63,7 +63,6 @@ export const viewRenderConfig: ViewRenderConfig = {
       globals: [],
     };
 
-    // TODO cache the result
     const pugTemplateFn = compileFile(path, pugOptions);
 
     return await pugTemplateFn(model as Record<string, unknown>);

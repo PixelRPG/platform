@@ -8,5 +8,8 @@
   "editor.formatOnSave": true,
   "deno.suggest.imports.hosts": {
     "https://deno.land": true
-  }
+  },
+  "cSpell.words": [
+    "alosaur"
+  ]
 }

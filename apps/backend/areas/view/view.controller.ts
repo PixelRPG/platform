@@ -2,7 +2,7 @@ import { Controller, Get, HttpError, Param, View } from "alosaur/mod.ts";
 import { PageService } from "../../services/page.service.ts";
 import { HomeService } from "../../services/home.service.ts";
 import { NavigationService } from "../../services/navigation.service.ts";
-import { ContactService } from "../../services/contact.service.ts";
+import { GamesService } from "../../services/games.service.ts";
 import { SettingsService } from "../../services/settings.service.ts";
 import { SeoService } from "../../services/seo.service.ts";
 import { ViewContext } from "../../types/view-context.ts";
@@ -12,7 +12,7 @@ export class ViewController {
   constructor(
     private readonly settings: SettingsService,
     private readonly nav: NavigationService,
-    private readonly contact: ContactService,
+    private readonly games: GamesService,
     private readonly home: HomeService,
     private readonly page: PageService,
     private readonly seo: SeoService,
@@ -87,11 +87,11 @@ export class ViewController {
   public async getGlobals() {
     const settings = await this.settings.get();
     const nav = await this.nav.get();
-    const contact = await this.contact.get();
+    const games = await this.games.get();
     return {
       settings,
       nav,
-      contact,
+      games,
     };
   }
 }
