@@ -4,3 +4,6 @@
 [submodule "packages/deno-pug"]
 	path = packages/deno-pug
 	url = https://github.com/ArtCodeStudio/pug.git
+[submodule "packages/graphql-request"]
+	path = packages/graphql-request
+	url = https://github.com/ArtCodeStudio/graphql-request.git

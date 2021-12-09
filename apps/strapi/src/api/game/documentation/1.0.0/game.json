@@ -7702,20 +7702,6 @@
                       "summary": {
                         "type": "string"
                       },
-                      "gallery": {
-                        "type": "array",
-                        "items": {
-                          "oneOf": [
-                            {
-                              "type": "integer"
-                            },
-                            {
-                              "type": "string"
-                            }
-                          ],
-                          "example": "string or id"
-                        }
-                      },
                       "slug": {
                         "type": "string"
                       }
@@ -19527,20 +19513,6 @@
                       },
                       "summary": {
                         "type": "string"
-                      },
-                      "gallery": {
-                        "type": "array",
-                        "items": {
-                          "oneOf": [
-                            {
-                              "type": "integer"
-                            },
-                            {
-                              "type": "string"
-                            }
-                          ],
-                          "example": "string or id"
-                        }
                       },
                       "slug": {
                         "type": "string"

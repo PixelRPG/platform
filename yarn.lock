@@ -1747,6 +1747,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/typescript-graphql-request@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "@graphql-codegen/typescript-graphql-request@npm:4.3.2"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^2.3.0
+    "@graphql-codegen/visitor-plugin-common": 2.5.1
+    auto-bind: ~4.0.0
+    tslib: ~2.3.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    graphql-request: ^3.4.0
+    graphql-tag: ^2.0.0
+  checksum: 11a8df349cf91d4de146bec9d132ffd864584efa2840d41a53b469cd97a37cc6386da16a33ac0465ff4f2656c050fbc0545d9653429ede6a64d5093631b6cfe1
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/typescript-operations@npm:2.2.1":
   version: 2.2.1
   resolution: "@graphql-codegen/typescript-operations@npm:2.2.1"
@@ -2876,16 +2892,21 @@ __metadata:
   dependencies:
     "@graphql-codegen/cli": 2.3.0
     "@graphql-codegen/typescript": ^2.4.1
+    "@graphql-codegen/typescript-graphql-request": ^4.3.2
     "@graphql-codegen/typescript-operations": 2.2.1
     "@tsconfig/node14": ^1.0.1
     "@types/node": ^16.11.12
     "@typescript-eslint/eslint-plugin": ^5.6.0
     "@typescript-eslint/parser": ^5.6.0
+    dotenv: ^10.0.0
     eslint: ^8.4.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
     graphql: ^16.1.0
+    graphql-request: ^3.7.0
+    graphql-tag: ^2.12.6
     prettier: 2.5.1
+    ts-node: ^10.4.0
     typescript: ^4.5.2
   languageName: unknown
   linkType: soft
@@ -12884,7 +12905,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graphql-tag@npm:^2.11.0":
+"graphql-tag@npm:^2.11.0, graphql-tag@npm:^2.12.6":
   version: 2.12.6
   resolution: "graphql-tag@npm:2.12.6"
   dependencies:

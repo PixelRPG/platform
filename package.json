@@ -22,6 +22,7 @@
     "packages/*",
     "!packages/riba",
     "!packages/deno-pug",
+    "!packages/graphql-request",
     "packages/riba/packages/*",
     "packages/riba/backend/*",
     "packages/riba/infra/*",

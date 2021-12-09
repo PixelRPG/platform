@@ -2,7 +2,8 @@ overwrite: true
 schema: "./src/graphql/schema/*.graphql"
 documents: "./src/graphql/documents/**/*.gql"
 generates:
-  ./src/types/strapi-gql.ts:
+  ./src/sdk.ts:
     plugins:
       - "typescript"
       - "typescript-operations"
+      - "typescript-graphql-request"
