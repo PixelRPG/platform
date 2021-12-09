@@ -24,10 +24,20 @@
 	"settings": {
 		"cSpell.words": [
 			"artandcode",
+			"codegen",
+			"codegena",
+			"dtsgen",
+			"dtsgenerator",
 			"Garber",
+			"importmap",
+			"oapi",
 			"openapi",
+			"openapitools",
 			"pixelrpg",
-			"strapi"
+			"riba",
+			"ribajs",
+			"strapi",
+			"typegen"
 		]
 	}
 }

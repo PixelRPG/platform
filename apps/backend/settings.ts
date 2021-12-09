@@ -1,4 +1,4 @@
-import "dotenv/load.ts"; // Autoload .env file
+import "dotenv/load.ts"; // Auto load .env file
 import { AppSettings, ViewRenderConfig } from "alosaur/mod.ts";
 import { ViewArea } from "./areas/view/view.area.ts";
 import { ApiArea } from "./areas/backend/api/api.area.ts";

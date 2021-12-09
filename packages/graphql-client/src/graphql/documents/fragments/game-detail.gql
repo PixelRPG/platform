@@ -1,0 +1,4 @@
+fragment GameDetail on Game {
+  name
+  description
+}

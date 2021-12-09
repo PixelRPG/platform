@@ -19,7 +19,9 @@
   "workspaces": [
     "apps/*",
     "!apps/strapi",
-    "tools/*",
+    "packages/*",
+    "!packages/riba",
+    "!packages/deno-pug",
     "packages/riba/packages/*",
     "packages/riba/backend/*",
     "packages/riba/infra/*",

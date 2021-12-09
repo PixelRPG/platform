@@ -1,0 +1,8 @@
+overwrite: true
+schema: "./src/graphql/schema/*.graphql"
+documents: "./src/graphql/documents/**/*.gql"
+generates:
+  ./src/types/strapi-gql.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations"

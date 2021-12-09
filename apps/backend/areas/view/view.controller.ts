@@ -26,7 +26,7 @@ export class ViewController {
       if (globals.settings.maintenanceMode) {
         return this.renderMaintenancePage(globals);
       }
-      const home = await this.home.get();
+      // const home = await this.home.get();
       const seo = this.seo.get({
         template: "home",
       });
