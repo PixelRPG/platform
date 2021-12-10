@@ -1,4 +1,0 @@
-fragment GameBasic on Game {
-  name
-  summary
-}

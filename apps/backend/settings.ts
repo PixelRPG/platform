@@ -23,6 +23,10 @@ const STRAPI_REMOTE_URL = Deno.env.get("STRAPI_REMOTE_URL") ||
 const STRAPI_LOCAL_URL = Deno.env.get("STRAPI_LOCAL_URL") ||
   `http://localhost:3002`;
 
+const STRAPI_API_TOKEN = Deno.env.get("STRAPI_API_TOKEN") || "";
+
+const STRAPI_GRAPHQL_PATH = Deno.env.get("STRAPI_GRAPHQL_PATH") || "/graphql";
+
 export const appSettings: AppSettings = {
   areas: [ViewArea, ApiArea],
   middlewares: [Log],
@@ -41,6 +45,16 @@ export const strapiConfig = {
     remote: STRAPI_REMOTE_URL,
     local: STRAPI_LOCAL_URL,
   },
+  auth: {
+    token: STRAPI_API_TOKEN,
+  },
+  graphql: {
+    path: STRAPI_GRAPHQL_PATH,
+    url: {
+      remote: STRAPI_REMOTE_URL + STRAPI_GRAPHQL_PATH,
+      local: STRAPI_LOCAL_URL + STRAPI_GRAPHQL_PATH,
+    },
+  }
 };
 
 const viewGlobalModel = {

@@ -21,12 +21,12 @@
 			"name": "riba (yarn)"
 		},
 		{
-			"path": "packages/graphql-client",
-			"name": "graphql-client (yarn)"
+			"path": "packages/graphql-sdk",
+			"name": "graphql-sdk (yarn)"
 		},
 		{
-			"path": "packages/rest-client",
-			"name": "rest-client (yarn)"
+			"path": "packages/rest-sdk",
+			"name": "rest-sdk (yarn)"
 		}
 	],
 	"settings": {

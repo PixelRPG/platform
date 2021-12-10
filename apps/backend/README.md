@@ -19,18 +19,18 @@ dvm alias default v1.16.4 # Always use v1.16.4 as the default deno version
 
 ```bash
 cd backend
-dvm run v1.16.4 run --allow-run scripts.ts start
+denon start
 ```
 
 ### Watch
 
 ```bash
 cd backend
-dvm run v1.16.4 run --allow-run scripts.ts watch
+denon watch
 ```
 
 ### Generate OpenAPI file
 
 ```bash
-dvm run v1.16.4 run --allow-run scripts.ts openapi
+denon openapi
 ```

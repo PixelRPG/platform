@@ -1,20 +1,15 @@
 import { Injectable } from "alosaur/mod.ts";
-import { StrapiService } from "./strapi.service.ts";
-// import { StrapiRestAPIContact } from "../types/strapi-rest-api-contact.ts";
-// import { StrapiImage } from "../types/strapi-image.ts";
+import { StrapiGraphQLService } from "./strapi-graphql.service.ts";
+import type { GamesQueryVariables } from "graphql-sdk/mod.ts";
 
 @Injectable()
 export class GamesService {
-  private readonly strapi = new StrapiService("game");
+  private readonly graphql = new StrapiGraphQLService();
 
   constructor() {}
 
-  public async get() {
-    try {
-      // const contact = await this.strapi.get<StrapiRestAPIContact>();
-      return await {};
-    } catch (error) {
-      throw error;
-    }
+  public async list(vars: GamesQueryVariables) {
+    const games = await this.graphql.sdk.games(vars);
+    return games;
   }
 }

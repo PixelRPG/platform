@@ -6,3 +6,7 @@ block content
       .row
         .col-12
           h1 Hello World
+          each game in games
+            .col-4
+              h2= game.attributes.name
+              p= game.attributes.summary

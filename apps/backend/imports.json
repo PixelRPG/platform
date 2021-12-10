@@ -4,6 +4,10 @@
     "pug/": "https://raw.githubusercontent.com/lumeland/pug/master/",
     "dotenv/": "https://deno.land/x/dotenv@v3.1.0/",
     "std/": "https://deno.land/std@0.117.0/",
-    "rusty_markdown/": "https://deno.land/x/rusty_markdown@v0.4.1/"
+    "rusty_markdown/": "https://deno.land/x/rusty_markdown@v0.4.1/",
+    "graphql-sdk/": "../../packages/graphql-sdk/",
+    "graphql-tag": "https://cdn.esm.sh/graphql-tag",
+    "graphql-request": "../../packages/graphql-request/mod.ts",
+    "graphql-request/dist/types.dom": "../../packages/graphql-request/src/types.dom.ts"
   }
 }

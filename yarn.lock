@@ -2886,15 +2886,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pixelrpg/graphql-client@workspace:packages/graphql-client":
+"@pixelrpg/graphql-sdk@workspace:packages/graphql-sdk":
   version: 0.0.0-use.local
-  resolution: "@pixelrpg/graphql-client@workspace:packages/graphql-client"
+  resolution: "@pixelrpg/graphql-sdk@workspace:packages/graphql-sdk"
   dependencies:
     "@graphql-codegen/cli": 2.3.0
     "@graphql-codegen/typescript": ^2.4.1
     "@graphql-codegen/typescript-graphql-request": ^4.3.2
     "@graphql-codegen/typescript-operations": 2.2.1
     "@tsconfig/node14": ^1.0.1
+    "@tsconfig/node16": ^1.0.2
     "@types/node": ^16.11.12
     "@typescript-eslint/eslint-plugin": ^5.6.0
     "@typescript-eslint/parser": ^5.6.0
@@ -2911,9 +2912,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pixelrpg/rest-client@workspace:packages/rest-client":
+"@pixelrpg/rest-client@workspace:packages/rest-sdk":
   version: 0.0.0-use.local
-  resolution: "@pixelrpg/rest-client@workspace:packages/rest-client"
+  resolution: "@pixelrpg/rest-client@workspace:packages/rest-sdk"
   dependencies:
     "@codegena/oapi3ts-cli": ^2.1.10-alpha.8
     "@openapitools/openapi-generator-cli": ^2.4.18
