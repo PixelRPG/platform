@@ -5,8 +5,13 @@ block content
     .container-fluid.container-lg.my-5
       .row
         .col-12
-          h1 Hello World
-          each game in games
-            .col-4
-              h2= game.attributes.name
-              p= game.attributes.summary
+          h1 Hello World!
+          p.h2 Whatever you are doing here, what you see here has just been started to be crafted and it is unusable. But feel free to check back later or check out the <a href="https://github.com/PixelRPG/platform">source code</a> if you like.
+          hr.border-4
+      .row
+        each game in games
+          .col-4
+            if game.attributes.gallery.data[0].attributes.url
+              img.img-fluid.w-100(rv-src=`'${game.attributes.gallery.data[0].attributes.url}' | strapi`)
+            h2.h4= game.attributes.name
+            p= game.attributes.summary

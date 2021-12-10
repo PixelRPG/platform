@@ -10,6 +10,9 @@ export class GamesService {
 
   public async list(vars: GamesQueryVariables) {
     const games = await this.graphql.sdk.games(vars);
+    for (const game of games.games?.data || []) {
+      game.attributes?.summary
+    }
     return games;
   }
 }

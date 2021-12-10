@@ -27,6 +27,15 @@
       "importMap": "imports.json",
       "tsconfig": "tsconfig.json",
       "watch": true
+    },
+    "openapi": {
+      "cmd": "deno run openapi.ts",
+      "desc": "Generate openapi schema",
+      "allow": ["read", "read"],
+      "unstable": false,
+      "importMap": "imports.json",
+      "tsconfig": "tsconfig.lib.json",
+      "watch": false
     }
   }
 }

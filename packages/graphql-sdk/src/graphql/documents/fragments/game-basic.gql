@@ -1,4 +1,14 @@
+#import "./game-gallery.gql"
+
 fragment GameBasic on Game {
   name
   summary
+  # TODO use filter here gallery()
+  gallery {
+    data {
+      attributes {
+        ...GameGallery
+      }
+    }
+  }
 }

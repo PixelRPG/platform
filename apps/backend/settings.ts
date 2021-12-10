@@ -79,6 +79,8 @@ export const viewRenderConfig: ViewRenderConfig = {
 
     const pugTemplateFn = compileFile(path, pugOptions);
 
+    console.debug("model", model);
+
     return await pugTemplateFn(model as Record<string, unknown>);
   },
 };
