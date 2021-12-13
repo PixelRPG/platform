@@ -2,6 +2,7 @@
 
 fragment GameBasic on Game {
   name
+  slug
   summary
   # TODO use filter here gallery()
   gallery {

@@ -379,10 +379,10 @@ $spacer: 16px;
 $spacers: (
   0: 0,
   1: calc($spacer / 2),
-  2: $spacer * 2,
-  3: $spacer * 3,
-  4: $spacer * 4,
-  5: $spacer * 5,
+  2: $spacer,
+  3: $spacer * 2,
+  4: $spacer * 3,
+  5: $spacer * 4,
 );
 // scss-docs-end spacer-variables-maps
 
@@ -438,7 +438,7 @@ $grid-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1400px
+  xxl: 1408px
 );
 // scss-docs-end grid-breakpoints
 
@@ -452,11 +452,11 @@ $grid-breakpoints: (
 
 // scss-docs-start container-max-widths
 $container-max-widths: (
-  sm: 540px,
+  sm: 544px,
   md: 720px,
   lg: 960px,
-  xl: 1140px,
-  xxl: 1320px
+  xl: 1152px,
+  xxl: 1328px
 );
 // scss-docs-end container-max-widths
 
@@ -468,7 +468,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12;
-$grid-gutter-width:           map-get($spacers, 2);
+$grid-gutter-width:           map-get($spacers, 3);
 $grid-row-columns:            6;
 
 // Container padding
@@ -495,15 +495,15 @@ $border-color:                $light;
 
 // scss-docs-start border-radius-variables
 $border-radius:               $spacer;
-$border-radius-sm:            .2rem;
-$border-radius-lg:            .3rem;
-$border-radius-pill:          50rem;
+$border-radius-sm:            3px;
+$border-radius-lg:            6px;
+$border-radius-pill:          8px;
 // scss-docs-end border-radius-variables
 
 // scss-docs-start box-shadow-variables
-$box-shadow:                  0 .5rem 1rem rgba($black, .15);
-$box-shadow-sm:               0 .125rem .25rem rgba($black, .075);
-$box-shadow-lg:               0 1rem 3rem rgba($black, .175);
+$box-shadow:                  0 8px 16px rgba($black, .15);
+$box-shadow-sm:               0 2px 4px rgba($black, .075);
+$box-shadow-lg:               0 16px 48px rgba($black, .175);
 $box-shadow-inset:            inset 0 1px 2px rgba($black, .075);
 // scss-docs-end box-shadow-variables
 
@@ -511,9 +511,9 @@ $component-active-color:      $white;
 $component-active-bg:         $primary;
 
 // scss-docs-start caret-variables
-$caret-width:                 .3em;
-$caret-vertical-align:        $caret-width * .85;
-$caret-spacing:               $caret-width * .85;
+$caret-width:                 6px;
+$caret-vertical-align:        4px;
+$caret-spacing:               4px;
 // scss-docs-end caret-variables
 
 $transition-base:             all .2s ease-in-out;

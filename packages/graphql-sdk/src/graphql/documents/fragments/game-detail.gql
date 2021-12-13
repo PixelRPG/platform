@@ -1,4 +1,5 @@
 fragment GameDetail on Game {
   name
+  slug
   description
 }

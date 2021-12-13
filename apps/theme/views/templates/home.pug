@@ -2,7 +2,7 @@ extends ../layouts/main.pug
 
 block content
   home-page
-    .container-fluid.container-lg.my-5
+    .container-fluid.my-5
       .row
         .col-12
           h1 Hello World!
@@ -10,8 +10,8 @@ block content
           hr.border-4
       .row
         each game in games
-          .col-4
-            if game.attributes.gallery.data[0].attributes.url
+          .col-12.col-sm-6.col-md-5.col-lg-4.col-xl-3
+            if game.attributes && game.attributes.gallery.data.length && game.attributes.gallery.data[0].attributes
               img.img-fluid.w-100(rv-src=`'${game.attributes.gallery.data[0].attributes.url}' | strapi`)
-            h2.h4= game.attributes.name
+            h2.h4.my-1= game.attributes.name
             p= game.attributes.summary

@@ -28,7 +28,7 @@ export class CSRApp {
       prefix: ["rv", "csr-rv"],
     });
 
-    // Regist custom components
+    // register custom components
     this.riba.module.component.regists({
       ...components,
       ...pages,
@@ -36,7 +36,7 @@ export class CSRApp {
     this.riba.module.binder.regists({ ...binders });
     this.riba.module.formatter.regists({ ...formatters });
 
-    // Regist modules
+    // register modules
     this.riba.module.regist(coreModule.init());
     this.riba.module.regist(
       routerModule.init({

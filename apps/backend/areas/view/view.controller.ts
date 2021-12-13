@@ -1,6 +1,7 @@
-import { Controller, Get, HttpError, View } from "alosaur/mod.ts";
+import { Controller, Get, HttpError, View, QueryParam } from "alosaur/mod.ts";
 import { GamesService } from "../../services/games.service.ts";
 import { ViewContext } from "../../types/view-context.ts";
+import type { Scalars } from "graphql-sdk/mod.ts";
 
 @Controller()
 export class ViewController {
@@ -9,12 +10,10 @@ export class ViewController {
   ) {}
 
   @Get("/")
-  public async renderHomePage() {
+  public async renderHomePage(@QueryParam('locale') locale: Scalars["I18NLocaleCode"]) {
     const ctx: ViewContext = {};
     try {
-      const games = await this.games.list({
-        locale: "en",
-      });
+      const games = await this.games.list(locale);
       const html = await View("templates/home", {
         ctx,
         games: games.games?.data

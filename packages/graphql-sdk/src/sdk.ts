@@ -1413,9 +1413,9 @@ export type UsersPermissionsUserRelationResponseCollection = {
   data: Array<UsersPermissionsUserEntity>;
 };
 
-export type GameBasicFragment = { __typename?: 'Game', name: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined };
+export type GameBasicFragment = { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined };
 
-export type GameDetailFragment = { __typename?: 'Game', name: string, description?: string | null | undefined };
+export type GameDetailFragment = { __typename?: 'Game', name: string, slug: string, description?: string | null | undefined };
 
 export type GameGalleryFragment = { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string };
 
@@ -1424,7 +1424,7 @@ export type GamesQueryVariables = Exact<{
 }>;
 
 
-export type GamesQuery = { __typename?: 'Query', games?: { __typename?: 'GameEntityResponseCollection', data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }>, meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } } } | null | undefined };
+export type GamesQuery = { __typename?: 'Query', games?: { __typename?: 'GameEntityResponseCollection', data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }>, meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } } } | null | undefined };
 
 export const GameGalleryFragmentDoc = gql`
     fragment GameGallery on UploadFile {
@@ -1439,6 +1439,7 @@ export const GameGalleryFragmentDoc = gql`
 export const GameBasicFragmentDoc = gql`
     fragment GameBasic on Game {
   name
+  slug
   summary
   gallery {
     data {
@@ -1452,6 +1453,7 @@ export const GameBasicFragmentDoc = gql`
 export const GameDetailFragmentDoc = gql`
     fragment GameDetail on Game {
   name
+  slug
   description
 }
     `;

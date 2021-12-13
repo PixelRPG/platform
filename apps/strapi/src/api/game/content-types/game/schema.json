@@ -115,13 +115,12 @@
     "slug": {
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "type": "uid",
-      "targetField": "name",
-      "required": true,
-      "minLength": 3
+      "type": "string",
+      "unique": false,
+      "required": true
     }
   }
 }

@@ -66,7 +66,7 @@ const viewGlobalModel = {
 export const viewRenderConfig: ViewRenderConfig = {
   type: "pug",
   basePath: VIEW_BASE_PATH,
-  getBody: async (path, model, config) => {
+  getBody: (path, model, config) => {
     if (!path.endsWith(".pug")) {
       path = path + ".pug";
     }
@@ -79,8 +79,6 @@ export const viewRenderConfig: ViewRenderConfig = {
 
     const pugTemplateFn = compileFile(path, pugOptions);
 
-    console.debug("model", model);
-
-    return await pugTemplateFn(model as Record<string, unknown>);
+    return pugTemplateFn(model as Record<string, unknown>);
   },
 };
