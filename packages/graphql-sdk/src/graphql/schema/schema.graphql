@@ -201,14 +201,11 @@ enum ENUM_COMPONENTCONTENTDOWNLOAD_ARCHITECTURE {
   arm
 }
 
-enum ENUM_COMPONENTCONTENTDOWNLOAD_LANGUAGE {
-  English
-  German
-  Franch
-}
-
 input ComponentContentDownloadFiltersInput {
   version: StringFilterInput
+  tested: BooleanFilterInput
+  easyRPG: BooleanFilterInput
+  language: LanguageFiltersInput
   and: [ComponentContentDownloadFiltersInput]
   or: [ComponentContentDownloadFiltersInput]
   not: ComponentContentDownloadFiltersInput
@@ -220,7 +217,9 @@ input ComponentContentDownloadInput {
   architecture: ENUM_COMPONENTCONTENTDOWNLOAD_ARCHITECTURE
   file: ID
   version: String
-  Language: ENUM_COMPONENTCONTENTDOWNLOAD_LANGUAGE
+  tested: Boolean
+  easyRPG: Boolean
+  language: ID
 }
 
 type ComponentContentDownload {
@@ -228,8 +227,10 @@ type ComponentContentDownload {
   platform: ENUM_COMPONENTCONTENTDOWNLOAD_PLATFORM!
   architecture: ENUM_COMPONENTCONTENTDOWNLOAD_ARCHITECTURE!
   file: UploadFileEntityResponse!
-  version: String!
-  Language: ENUM_COMPONENTCONTENTDOWNLOAD_LANGUAGE
+  version: String
+  tested: Boolean
+  easyRPG: Boolean
+  language: LanguageEntityResponse
 }
 
 input UploadFileFiltersInput {
@@ -535,6 +536,10 @@ input EngineFiltersInput {
   name: StringFilterInput
   description: StringFilterInput
   games: GameFiltersInput
+  slug: StringFilterInput
+  website: StringFilterInput
+  source: StringFilterInput
+  steam: StringFilterInput
   createdAt: DateTimeFilterInput
   updatedAt: DateTimeFilterInput
   localizations: EngineFiltersInput
@@ -548,12 +553,20 @@ input EngineInput {
   name: String
   description: String
   games: [ID]
+  slug: String
+  website: String
+  source: String
+  steam: String
 }
 
 type Engine {
   name: String!
   description: String!
   games(filters: GameFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): GameRelationResponseCollection
+  slug: String!
+  website: String
+  source: String
+  steam: String
   createdAt: DateTime
   updatedAt: DateTime
   localizations(filters: EngineFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): EngineRelationResponseCollection
@@ -589,6 +602,9 @@ input GameFiltersInput {
   genre: GenreFiltersInput
   tags: TagFiltersInput
   slug: StringFilterInput
+  ageRecommendation: IntFilterInput
+  source: StringFilterInput
+  dynRPG: BooleanFilterInput
   createdAt: DateTimeFilterInput
   updatedAt: DateTimeFilterInput
   publishedAt: DateTimeFilterInput
@@ -612,6 +628,9 @@ input GameInput {
   downloads: [ComponentContentDownloadInput]
   tags: [ID]
   slug: String
+  ageRecommendation: Int
+  source: String
+  dynRPG: Boolean
   publishedAt: DateTime
 }
 
@@ -628,6 +647,9 @@ type Game {
   downloads(filters: ComponentContentDownloadFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentContentDownload]
   tags(filters: TagFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): TagRelationResponseCollection
   slug: String!
+  ageRecommendation: Int!
+  source: String
+  dynRPG: Boolean
   createdAt: DateTime
   updatedAt: DateTime
   publishedAt: DateTime
@@ -704,6 +726,51 @@ type GenreRelationResponseCollection {
   data: [GenreEntity!]!
 }
 
+input LanguageFiltersInput {
+  id: IDFilterInput
+  language: StringFilterInput
+  code: StringFilterInput
+  createdAt: DateTimeFilterInput
+  updatedAt: DateTimeFilterInput
+  localizations: LanguageFiltersInput
+  locale: StringFilterInput
+  and: [LanguageFiltersInput]
+  or: [LanguageFiltersInput]
+  not: LanguageFiltersInput
+}
+
+input LanguageInput {
+  language: String
+  code: String
+}
+
+type Language {
+  language: String!
+  code: String!
+  createdAt: DateTime
+  updatedAt: DateTime
+  localizations(filters: LanguageFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): LanguageRelationResponseCollection
+  locale: String
+}
+
+type LanguageEntity {
+  id: ID
+  attributes: Language
+}
+
+type LanguageEntityResponse {
+  data: LanguageEntity
+}
+
+type LanguageEntityResponseCollection {
+  data: [LanguageEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
+type LanguageRelationResponseCollection {
+  data: [LanguageEntity!]!
+}
+
 input TagFiltersInput {
   id: IDFilterInput
   tag: StringFilterInput
@@ -749,7 +816,7 @@ type TagRelationResponseCollection {
   data: [TagEntity!]!
 }
 
-union GenericMorph = ComponentContentDownload | UploadFile | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Developer | Engine | Game | Genre | Tag
+union GenericMorph = ComponentContentDownload | UploadFile | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Developer | Engine | Game | Genre | Language | Tag
 
 input FileInfoInput {
   name: String
@@ -833,6 +900,8 @@ type Query {
   games(filters: GameFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE, locale: I18NLocaleCode): GameEntityResponseCollection
   genre(id: ID, locale: I18NLocaleCode): GenreEntityResponse
   genres(filters: GenreFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE, locale: I18NLocaleCode): GenreEntityResponseCollection
+  language(id: ID, locale: I18NLocaleCode): LanguageEntityResponse
+  languages(filters: LanguageFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], locale: I18NLocaleCode): LanguageEntityResponseCollection
   tag(id: ID, locale: I18NLocaleCode): TagEntityResponse
   tags(filters: TagFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], locale: I18NLocaleCode): TagEntityResponseCollection
   me: UsersPermissionsMe
@@ -854,6 +923,9 @@ type Mutation {
   createGenre(data: GenreInput!, locale: I18NLocaleCode): GenreEntityResponse
   updateGenre(id: ID!, data: GenreInput!, locale: I18NLocaleCode): GenreEntityResponse
   deleteGenre(id: ID!, locale: I18NLocaleCode): GenreEntityResponse
+  createLanguage(data: LanguageInput!, locale: I18NLocaleCode): LanguageEntityResponse
+  updateLanguage(id: ID!, data: LanguageInput!, locale: I18NLocaleCode): LanguageEntityResponse
+  deleteLanguage(id: ID!, locale: I18NLocaleCode): LanguageEntityResponse
   createTag(data: TagInput!, locale: I18NLocaleCode): TagEntityResponse
   updateTag(id: ID!, data: TagInput!, locale: I18NLocaleCode): TagEntityResponse
   deleteTag(id: ID!, locale: I18NLocaleCode): TagEntityResponse
@@ -865,6 +937,7 @@ type Mutation {
   createEngineLocalization(id: ID, data: EngineInput, locale: I18NLocaleCode): EngineEntityResponse
   createGameLocalization(id: ID, data: GameInput, locale: I18NLocaleCode): GameEntityResponse
   createGenreLocalization(id: ID, data: GenreInput, locale: I18NLocaleCode): GenreEntityResponse
+  createLanguageLocalization(id: ID, data: LanguageInput, locale: I18NLocaleCode): LanguageEntityResponse
   createTagLocalization(id: ID, data: TagInput, locale: I18NLocaleCode): TagEntityResponse
 
   """Create a new role"""

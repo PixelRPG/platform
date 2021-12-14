@@ -5,7 +5,17 @@ module.exports = [
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
-  'strapi::body',
+  {
+    name: 'strapi::body',
+    config: {
+      // See also config/nginx/strapi.pixelrpg.org.conf
+      formLimit: '512mb', // modify here limit of the form body
+      jsonLimit: '512mb', // modify here limit of the JSON body
+      formidable: {
+        maxFileSize: 512 * 1024 * 1024, // multipart data, modify here limit of uploaded file size
+      },
+    },
+  },
   'strapi::favicon',
   'strapi::public',
 ];

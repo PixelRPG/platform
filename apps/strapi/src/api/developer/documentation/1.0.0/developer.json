@@ -1202,6 +1202,18 @@
                                                             }
                                                           }
                                                         },
+                                                        "slug": {
+                                                          "type": "string"
+                                                        },
+                                                        "website": {
+                                                          "type": "string"
+                                                        },
+                                                        "source": {
+                                                          "type": "string"
+                                                        },
+                                                        "steam": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -2521,13 +2533,100 @@
                                                   "version": {
                                                     "type": "string"
                                                   },
-                                                  "Language": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "English",
-                                                      "German",
-                                                      "Franch"
-                                                    ]
+                                                  "tested": {
+                                                    "type": "boolean"
+                                                  },
+                                                  "easyRPG": {
+                                                    "type": "boolean"
+                                                  },
+                                                  "language": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "string"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                              "language": {
+                                                                "type": "string"
+                                                              },
+                                                              "code": {
+                                                                "type": "string"
+                                                              },
+                                                              "createdAt": {
+                                                                "type": "string",
+                                                                "format": "date-time"
+                                                              },
+                                                              "updatedAt": {
+                                                                "type": "string",
+                                                                "format": "date-time"
+                                                              },
+                                                              "createdBy": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "data": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "string"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "updatedBy": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "data": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "string"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "localizations": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "data": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                      "type": "object",
+                                                                      "properties": {
+                                                                        "id": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "attributes": {
+                                                                          "type": "object",
+                                                                          "properties": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              },
+                                                              "locale": {
+                                                                "type": "string"
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
                                                   }
                                                 }
                                               }
@@ -2643,6 +2742,15 @@
                                             },
                                             "slug": {
                                               "type": "string"
+                                            },
+                                            "ageRecommendation": {
+                                              "type": "integer"
+                                            },
+                                            "source": {
+                                              "type": "string"
+                                            },
+                                            "dynRPG": {
+                                              "type": "boolean"
                                             },
                                             "createdAt": {
                                               "type": "string",
@@ -4257,6 +4365,18 @@
                                                           }
                                                         }
                                                       },
+                                                      "slug": {
+                                                        "type": "string"
+                                                      },
+                                                      "website": {
+                                                        "type": "string"
+                                                      },
+                                                      "source": {
+                                                        "type": "string"
+                                                      },
+                                                      "steam": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -5576,13 +5696,100 @@
                                                 "version": {
                                                   "type": "string"
                                                 },
-                                                "Language": {
-                                                  "type": "string",
-                                                  "enum": [
-                                                    "English",
-                                                    "German",
-                                                    "Franch"
-                                                  ]
+                                                "tested": {
+                                                  "type": "boolean"
+                                                },
+                                                "easyRPG": {
+                                                  "type": "boolean"
+                                                },
+                                                "language": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "string"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "language": {
+                                                              "type": "string"
+                                                            },
+                                                            "code": {
+                                                              "type": "string"
+                                                            },
+                                                            "createdAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "updatedAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "createdBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "updatedBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "localizations": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "string"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "locale": {
+                                                              "type": "string"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
                                                 }
                                               }
                                             }
@@ -5698,6 +5905,15 @@
                                           },
                                           "slug": {
                                             "type": "string"
+                                          },
+                                          "ageRecommendation": {
+                                            "type": "integer"
+                                          },
+                                          "source": {
+                                            "type": "string"
+                                          },
+                                          "dynRPG": {
+                                            "type": "boolean"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -7230,6 +7446,18 @@
                                                           }
                                                         }
                                                       },
+                                                      "slug": {
+                                                        "type": "string"
+                                                      },
+                                                      "website": {
+                                                        "type": "string"
+                                                      },
+                                                      "source": {
+                                                        "type": "string"
+                                                      },
+                                                      "steam": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -8549,13 +8777,100 @@
                                                 "version": {
                                                   "type": "string"
                                                 },
-                                                "Language": {
-                                                  "type": "string",
-                                                  "enum": [
-                                                    "English",
-                                                    "German",
-                                                    "Franch"
-                                                  ]
+                                                "tested": {
+                                                  "type": "boolean"
+                                                },
+                                                "easyRPG": {
+                                                  "type": "boolean"
+                                                },
+                                                "language": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "string"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "language": {
+                                                              "type": "string"
+                                                            },
+                                                            "code": {
+                                                              "type": "string"
+                                                            },
+                                                            "createdAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "updatedAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "createdBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "updatedBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "localizations": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "string"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "locale": {
+                                                              "type": "string"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
                                                 }
                                               }
                                             }
@@ -8671,6 +8986,15 @@
                                           },
                                           "slug": {
                                             "type": "string"
+                                          },
+                                          "ageRecommendation": {
+                                            "type": "integer"
+                                          },
+                                          "source": {
+                                            "type": "string"
+                                          },
+                                          "dynRPG": {
+                                            "type": "boolean"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -10194,6 +10518,18 @@
                                                           }
                                                         }
                                                       },
+                                                      "slug": {
+                                                        "type": "string"
+                                                      },
+                                                      "website": {
+                                                        "type": "string"
+                                                      },
+                                                      "source": {
+                                                        "type": "string"
+                                                      },
+                                                      "steam": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -11513,13 +11849,100 @@
                                                 "version": {
                                                   "type": "string"
                                                 },
-                                                "Language": {
-                                                  "type": "string",
-                                                  "enum": [
-                                                    "English",
-                                                    "German",
-                                                    "Franch"
-                                                  ]
+                                                "tested": {
+                                                  "type": "boolean"
+                                                },
+                                                "easyRPG": {
+                                                  "type": "boolean"
+                                                },
+                                                "language": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "string"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "language": {
+                                                              "type": "string"
+                                                            },
+                                                            "code": {
+                                                              "type": "string"
+                                                            },
+                                                            "createdAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "updatedAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "createdBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "updatedBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "localizations": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "string"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "locale": {
+                                                              "type": "string"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
                                                 }
                                               }
                                             }
@@ -11635,6 +12058,15 @@
                                           },
                                           "slug": {
                                             "type": "string"
+                                          },
+                                          "ageRecommendation": {
+                                            "type": "integer"
+                                          },
+                                          "source": {
+                                            "type": "string"
+                                          },
+                                          "dynRPG": {
+                                            "type": "boolean"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -13435,6 +13867,18 @@
                                                           }
                                                         }
                                                       },
+                                                      "slug": {
+                                                        "type": "string"
+                                                      },
+                                                      "website": {
+                                                        "type": "string"
+                                                      },
+                                                      "source": {
+                                                        "type": "string"
+                                                      },
+                                                      "steam": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -14754,13 +15198,100 @@
                                                 "version": {
                                                   "type": "string"
                                                 },
-                                                "Language": {
-                                                  "type": "string",
-                                                  "enum": [
-                                                    "English",
-                                                    "German",
-                                                    "Franch"
-                                                  ]
+                                                "tested": {
+                                                  "type": "boolean"
+                                                },
+                                                "easyRPG": {
+                                                  "type": "boolean"
+                                                },
+                                                "language": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "string"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "language": {
+                                                              "type": "string"
+                                                            },
+                                                            "code": {
+                                                              "type": "string"
+                                                            },
+                                                            "createdAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "updatedAt": {
+                                                              "type": "string",
+                                                              "format": "date-time"
+                                                            },
+                                                            "createdBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "updatedBy": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "string"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "localizations": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "array",
+                                                                  "items": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "id": {
+                                                                        "type": "string"
+                                                                      },
+                                                                      "attributes": {
+                                                                        "type": "object",
+                                                                        "properties": {}
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
+                                                            "locale": {
+                                                              "type": "string"
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
                                                 }
                                               }
                                             }
@@ -14876,6 +15407,15 @@
                                           },
                                           "slug": {
                                             "type": "string"
+                                          },
+                                          "ageRecommendation": {
+                                            "type": "integer"
+                                          },
+                                          "source": {
+                                            "type": "string"
+                                          },
+                                          "dynRPG": {
+                                            "type": "boolean"
                                           },
                                           "createdAt": {
                                             "type": "string",

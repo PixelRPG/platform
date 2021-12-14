@@ -36,15 +36,21 @@
     },
     "version": {
       "type": "string",
-      "required": true
+      "required": false
     },
-    "Language": {
-      "type": "enumeration",
-      "enum": [
-        "English",
-        "German",
-        "Franch"
-      ]
+    "tested": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "easyRPG": {
+      "type": "boolean",
+      "default": false
+    },
+    "language": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::language.language"
     }
   }
 }

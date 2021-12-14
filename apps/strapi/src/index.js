@@ -3,7 +3,7 @@
 const exportGraphQlSchemaFile = (strapi) => {
   const { printSchema } = require('graphql/utilities/printSchema');
   const fs = require('fs');
-  const targetFile = "../../../packages/graphql-client/src/graphql/schema/schema.graphql";
+  const targetFile = "../../packages/graphql-sdk/src/graphql/schema/schema.graphql";
 
   const schema = strapi
   .plugin('graphql')
