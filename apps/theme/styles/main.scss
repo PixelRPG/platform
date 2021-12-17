@@ -22,4 +22,5 @@
 @import 'templates/index';
 
 // Custom components
-@import '../scripts/components/index';
+@import '../scripts/csr/components/index';
+@import '../scripts/ssr/components/index';

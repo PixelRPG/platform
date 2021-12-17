@@ -1,9 +1,14 @@
 {
     "name": "@pixelrpg/backend",
+    "description": "This file is needed to make use of node in deno-ssr",
+    "private": true,
+    "dependencies": {
+        "@ribajs/node-ssr": "workspace:*"
+    },
     "scripts": {
-        "start": "deno run --allow-run scripts.ts start",
-        "watch": "deno run --allow-run scripts.ts watch",
-        "openapi": "deno run --allow-run scripts.ts openapi",
+        "start": "denon start",
+        "watch": "denon watch",
+        "openapi": "denon openapi",
         "pm2:dev": "pm2 start ./pm2.dev.config.js",
         "pm2:prod": "pm2 start ./pm2.prod.config.js"
     }

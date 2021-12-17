@@ -1,19 +1,8 @@
 import "dotenv/load.ts"; // Auto load .env file
-import { AppSettings, ViewRenderConfig } from "alosaur/mod.ts";
+import { AppSettings } from "alosaur/mod.ts";
 import { ViewArea } from "./areas/view/view.area.ts";
 import { ApiArea } from "./areas/backend/api/api.area.ts";
 import { Log } from "./middlewares/log.middleware.ts";
-import { compileFile, Options as PugOptions } from "pug/mod.ts";
-
-const VIEW_BASE_PATH = Deno.env.get("VIEW_BASE_PATH") ||
-  `${Deno.cwd()}/../theme/views`;
-
-const SERVER_PORT = Deno.env.get("SERVER_PORT") || 8080;
-
-const STATIC_ROOT = Deno.env.get("STATIC_ROOT") ||
-  `${Deno.cwd()}/../theme/assets`;
-
-const LOGGING = Deno.env.get("LOGGING") === "true" || false;
 
 /** Used for client side requests to strapi */
 const STRAPI_REMOTE_URL = Deno.env.get("STRAPI_REMOTE_URL") ||
@@ -30,14 +19,6 @@ const STRAPI_GRAPHQL_PATH = Deno.env.get("STRAPI_GRAPHQL_PATH") || "/graphql";
 export const appSettings: AppSettings = {
   areas: [ViewArea, ApiArea],
   middlewares: [Log],
-  logging: LOGGING,
-  staticConfig: {
-    root: STATIC_ROOT,
-  },
-};
-
-export const serverSettings: Deno.ListenOptions = {
-  port: Number(SERVER_PORT),
 };
 
 export const strapiConfig = {
@@ -54,31 +35,11 @@ export const strapiConfig = {
       remote: STRAPI_REMOTE_URL + STRAPI_GRAPHQL_PATH,
       local: STRAPI_LOCAL_URL + STRAPI_GRAPHQL_PATH,
     },
-  }
-};
-
-const viewGlobalModel = {
-  env: {
-    STRAPI_REMOTE_URL,
   },
 };
 
-export const viewRenderConfig: ViewRenderConfig = {
-  type: "pug",
-  basePath: VIEW_BASE_PATH,
-  getBody: (path, model, config) => {
-    if (!path.endsWith(".pug")) {
-      path = path + ".pug";
-    }
-    path = config.basePath + "/" + path;
-    model = { ...viewGlobalModel, ...model };
-    const pugOptions: PugOptions = {
-      basedir: config.basePath,
-      globals: [],
-    };
-
-    const pugTemplateFn = compileFile(path, pugOptions);
-
-    return pugTemplateFn(model as Record<string, unknown>);
+export const templateVars = {
+  env: {
+    STRAPI_REMOTE_URL,
   },
 };

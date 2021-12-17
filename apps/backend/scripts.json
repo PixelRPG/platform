@@ -4,7 +4,7 @@
     "start": {
       "cmd": "deno run app.ts",
       "desc": "Run the platform backend",
-      "allow": ["net", "read", "env"],
+      "allow": ["net", "read", "env", "run"],
       "unstable": false,
       "importMap": "imports.json",
       "tsconfig": "tsconfig.json",
@@ -13,7 +13,7 @@
     "watch": {
       "cmd": "deno run app.ts",
       "desc": "Run the platform backend",
-      "allow": ["net", "read", "env"],
+      "allow": ["net", "read", "env", "run"],
       "unstable": false,
       "importMap": "imports.json",
       "tsconfig": "tsconfig.json",

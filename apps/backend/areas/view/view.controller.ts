@@ -1,4 +1,4 @@
-import { Controller, Get, HttpError, View, QueryParam } from "alosaur/mod.ts";
+import { Controller, Get, HttpError, QueryParam, View } from "alosaur/mod.ts";
 import { GamesService } from "../../services/games.service.ts";
 import { ViewContext } from "../../types/view-context.ts";
 import type { Scalars } from "graphql-sdk/mod.ts";
@@ -10,13 +10,15 @@ export class ViewController {
   ) {}
 
   @Get("/")
-  public async renderHomePage(@QueryParam('locale') locale: Scalars["I18NLocaleCode"]) {
+  public async renderHomePage(
+    @QueryParam("locale") locale: Scalars["I18NLocaleCode"],
+  ) {
     const ctx: ViewContext = {};
     try {
       const games = await this.games.list(locale);
-      const html = await View("templates/home", {
+      const html = await View("home", {
         ctx,
-        games: games.games?.data
+        games: games.games?.data,
       });
       return html;
     } catch (error) {
@@ -26,7 +28,7 @@ export class ViewController {
   }
 
   public async renderErrorPage(error: HttpError, ctx: ViewContext) {
-    const html = await View("templates/error", {
+    const html = await View("error", {
       error,
       ctx,
     });
@@ -34,7 +36,7 @@ export class ViewController {
   }
 
   public async renderMaintenancePage(model: any) {
-    const html = await View("templates/maintenance", model);
+    const html = await View("maintenance", model);
     return html;
   }
 }
