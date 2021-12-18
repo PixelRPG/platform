@@ -1,14 +1,19 @@
 #import "./game-gallery.gql"
 
-fragment GameBasic on Game {
-  name
-  slug
-  summary
-  # TODO use filter here gallery()
-  gallery {
-    data {
-      attributes {
-        ...GameGallery
+fragment GameBasic on GameEntityResponseCollection {
+  data {
+    id
+    attributes {
+      name
+      slug
+      summary
+      # TODO use filter here gallery()
+      gallery {
+        data {
+          attributes {
+            ...GameGallery
+          }
+        }
       }
     }
   }

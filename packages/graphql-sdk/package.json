@@ -19,6 +19,7 @@
     "examples:deno": "deno run --importmap=imports.json --allow-read --allow-net examples/deno.ts"
   },
   "devDependencies": {
+    "@babel/runtime": "^7.16.5",
     "@graphql-codegen/cli": "2.3.0",
     "@graphql-codegen/typescript": "^2.4.1",
     "@graphql-codegen/typescript-operations": "2.2.1",

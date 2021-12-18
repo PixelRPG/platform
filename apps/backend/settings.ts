@@ -1,6 +1,5 @@
 import "dotenv/load.ts"; // Auto load .env file
 import { AppSettings } from "alosaur/mod.ts";
-import { ViewArea } from "./areas/view/view.area.ts";
 import { ApiArea } from "./areas/backend/api/api.area.ts";
 import { Log } from "./middlewares/log.middleware.ts";
 
@@ -17,7 +16,7 @@ const STRAPI_API_TOKEN = Deno.env.get("STRAPI_API_TOKEN") || "";
 const STRAPI_GRAPHQL_PATH = Deno.env.get("STRAPI_GRAPHQL_PATH") || "/graphql";
 
 export const appSettings: AppSettings = {
-  areas: [ViewArea, ApiArea],
+  areas: [ApiArea],
   middlewares: [Log],
 };
 

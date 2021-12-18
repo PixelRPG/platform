@@ -48,27 +48,34 @@ export type BooleanFilterInput = {
 
 export type ComponentContentDownload = {
   __typename?: 'ComponentContentDownload';
-  Language?: Maybe<Enum_Componentcontentdownload_Language>;
   architecture: Enum_Componentcontentdownload_Architecture;
+  easyRPG?: Maybe<Scalars['Boolean']>;
   file: UploadFileEntityResponse;
   id: Scalars['ID'];
+  language?: Maybe<LanguageEntityResponse>;
   platform: Enum_Componentcontentdownload_Platform;
-  version: Scalars['String'];
+  tested?: Maybe<Scalars['Boolean']>;
+  version?: Maybe<Scalars['String']>;
 };
 
 export type ComponentContentDownloadFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<ComponentContentDownloadFiltersInput>>>;
+  easyRPG?: InputMaybe<BooleanFilterInput>;
+  language?: InputMaybe<LanguageFiltersInput>;
   not?: InputMaybe<ComponentContentDownloadFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ComponentContentDownloadFiltersInput>>>;
+  tested?: InputMaybe<BooleanFilterInput>;
   version?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentDownloadInput = {
-  Language?: InputMaybe<Enum_Componentcontentdownload_Language>;
   architecture?: InputMaybe<Enum_Componentcontentdownload_Architecture>;
+  easyRPG?: InputMaybe<Scalars['Boolean']>;
   file?: InputMaybe<Scalars['ID']>;
   id?: InputMaybe<Scalars['ID']>;
+  language?: InputMaybe<Scalars['ID']>;
   platform?: InputMaybe<Enum_Componentcontentdownload_Platform>;
+  tested?: InputMaybe<Scalars['Boolean']>;
   version?: InputMaybe<Scalars['String']>;
 };
 
@@ -178,12 +185,6 @@ export enum Enum_Componentcontentdownload_Architecture {
   X86 = 'x86'
 }
 
-export enum Enum_Componentcontentdownload_Language {
-  English = 'English',
-  Franch = 'Franch',
-  German = 'German'
-}
-
 export enum Enum_Componentcontentdownload_Platform {
   Linux = 'Linux',
   MacOs = 'MacOS',
@@ -198,7 +199,11 @@ export type Engine = {
   locale?: Maybe<Scalars['String']>;
   localizations?: Maybe<EngineRelationResponseCollection>;
   name: Scalars['String'];
+  slug: Scalars['String'];
+  source?: Maybe<Scalars['String']>;
+  steam?: Maybe<Scalars['String']>;
   updatedAt?: Maybe<Scalars['DateTime']>;
+  website?: Maybe<Scalars['String']>;
 };
 
 
@@ -244,13 +249,21 @@ export type EngineFiltersInput = {
   name?: InputMaybe<StringFilterInput>;
   not?: InputMaybe<EngineFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<EngineFiltersInput>>>;
+  slug?: InputMaybe<StringFilterInput>;
+  source?: InputMaybe<StringFilterInput>;
+  steam?: InputMaybe<StringFilterInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
+  website?: InputMaybe<StringFilterInput>;
 };
 
 export type EngineInput = {
   description?: InputMaybe<Scalars['String']>;
   games?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   name?: InputMaybe<Scalars['String']>;
+  slug?: InputMaybe<Scalars['String']>;
+  source?: InputMaybe<Scalars['String']>;
+  steam?: InputMaybe<Scalars['String']>;
+  website?: InputMaybe<Scalars['String']>;
 };
 
 export type EngineRelationResponseCollection = {
@@ -289,11 +302,13 @@ export type FloatFilterInput = {
 
 export type Game = {
   __typename?: 'Game';
+  ageRecommendation: Scalars['Int'];
   banner?: Maybe<UploadFileEntityResponse>;
   createdAt?: Maybe<Scalars['DateTime']>;
   description?: Maybe<Scalars['String']>;
   developer?: Maybe<DeveloperEntityResponse>;
   downloads?: Maybe<Array<Maybe<ComponentContentDownload>>>;
+  dynRPG?: Maybe<Scalars['Boolean']>;
   engine?: Maybe<EngineEntityResponse>;
   gallery?: Maybe<UploadFileRelationResponseCollection>;
   genre?: Maybe<GenreEntityResponse>;
@@ -302,6 +317,7 @@ export type Game = {
   name: Scalars['String'];
   publishedAt?: Maybe<Scalars['DateTime']>;
   slug: Scalars['String'];
+  source?: Maybe<Scalars['String']>;
   summary: Scalars['String'];
   tags?: Maybe<TagRelationResponseCollection>;
   updatedAt?: Maybe<Scalars['DateTime']>;
@@ -355,10 +371,12 @@ export type GameEntityResponseCollection = {
 };
 
 export type GameFiltersInput = {
+  ageRecommendation?: InputMaybe<IntFilterInput>;
   and?: InputMaybe<Array<InputMaybe<GameFiltersInput>>>;
   createdAt?: InputMaybe<DateTimeFilterInput>;
   description?: InputMaybe<StringFilterInput>;
   developer?: InputMaybe<DeveloperFiltersInput>;
+  dynRPG?: InputMaybe<BooleanFilterInput>;
   engine?: InputMaybe<EngineFiltersInput>;
   genre?: InputMaybe<GenreFiltersInput>;
   id?: InputMaybe<IdFilterInput>;
@@ -369,6 +387,7 @@ export type GameFiltersInput = {
   or?: InputMaybe<Array<InputMaybe<GameFiltersInput>>>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
   slug?: InputMaybe<StringFilterInput>;
+  source?: InputMaybe<StringFilterInput>;
   summary?: InputMaybe<StringFilterInput>;
   tags?: InputMaybe<TagFiltersInput>;
   updatedAt?: InputMaybe<DateTimeFilterInput>;
@@ -376,16 +395,19 @@ export type GameFiltersInput = {
 };
 
 export type GameInput = {
+  ageRecommendation?: InputMaybe<Scalars['Int']>;
   banner?: InputMaybe<Scalars['ID']>;
   description?: InputMaybe<Scalars['String']>;
   developer?: InputMaybe<Scalars['ID']>;
   downloads?: InputMaybe<Array<InputMaybe<ComponentContentDownloadInput>>>;
+  dynRPG?: InputMaybe<Scalars['Boolean']>;
   engine?: InputMaybe<Scalars['ID']>;
   gallery?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   genre?: InputMaybe<Scalars['ID']>;
   name?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   slug?: InputMaybe<Scalars['String']>;
+  source?: InputMaybe<Scalars['String']>;
   summary?: InputMaybe<Scalars['String']>;
   tags?: InputMaybe<Array<InputMaybe<Scalars['ID']>>>;
   website?: InputMaybe<Scalars['String']>;
@@ -396,7 +418,7 @@ export type GameRelationResponseCollection = {
   data: Array<GameEntity>;
 };
 
-export type GenericMorph = ComponentContentDownload | Developer | Engine | Game | Genre | I18NLocale | Tag | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = ComponentContentDownload | Developer | Engine | Game | Genre | I18NLocale | Language | Tag | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type Genre = {
   __typename?: 'Genre';
@@ -575,6 +597,63 @@ export type JsonFilterInput = {
   startsWith?: InputMaybe<Scalars['JSON']>;
 };
 
+export type Language = {
+  __typename?: 'Language';
+  code: Scalars['String'];
+  createdAt?: Maybe<Scalars['DateTime']>;
+  language: Scalars['String'];
+  locale?: Maybe<Scalars['String']>;
+  localizations?: Maybe<LanguageRelationResponseCollection>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+
+export type LanguageLocalizationsArgs = {
+  filters?: InputMaybe<LanguageFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type LanguageEntity = {
+  __typename?: 'LanguageEntity';
+  attributes?: Maybe<Language>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+export type LanguageEntityResponse = {
+  __typename?: 'LanguageEntityResponse';
+  data?: Maybe<LanguageEntity>;
+};
+
+export type LanguageEntityResponseCollection = {
+  __typename?: 'LanguageEntityResponseCollection';
+  data: Array<LanguageEntity>;
+  meta: ResponseCollectionMeta;
+};
+
+export type LanguageFiltersInput = {
+  and?: InputMaybe<Array<InputMaybe<LanguageFiltersInput>>>;
+  code?: InputMaybe<StringFilterInput>;
+  createdAt?: InputMaybe<DateTimeFilterInput>;
+  id?: InputMaybe<IdFilterInput>;
+  language?: InputMaybe<StringFilterInput>;
+  locale?: InputMaybe<StringFilterInput>;
+  localizations?: InputMaybe<LanguageFiltersInput>;
+  not?: InputMaybe<LanguageFiltersInput>;
+  or?: InputMaybe<Array<InputMaybe<LanguageFiltersInput>>>;
+  updatedAt?: InputMaybe<DateTimeFilterInput>;
+};
+
+export type LanguageInput = {
+  code?: InputMaybe<Scalars['String']>;
+  language?: InputMaybe<Scalars['String']>;
+};
+
+export type LanguageRelationResponseCollection = {
+  __typename?: 'LanguageRelationResponseCollection';
+  data: Array<LanguageEntity>;
+};
+
 export type Mutation = {
   __typename?: 'Mutation';
   createDeveloper?: Maybe<DeveloperEntityResponse>;
@@ -585,6 +664,8 @@ export type Mutation = {
   createGameLocalization?: Maybe<GameEntityResponse>;
   createGenre?: Maybe<GenreEntityResponse>;
   createGenreLocalization?: Maybe<GenreEntityResponse>;
+  createLanguage?: Maybe<LanguageEntityResponse>;
+  createLanguageLocalization?: Maybe<LanguageEntityResponse>;
   createTag?: Maybe<TagEntityResponse>;
   createTagLocalization?: Maybe<TagEntityResponse>;
   createUploadFile?: Maybe<UploadFileEntityResponse>;
@@ -596,6 +677,7 @@ export type Mutation = {
   deleteEngine?: Maybe<EngineEntityResponse>;
   deleteGame?: Maybe<GameEntityResponse>;
   deleteGenre?: Maybe<GenreEntityResponse>;
+  deleteLanguage?: Maybe<LanguageEntityResponse>;
   deleteTag?: Maybe<TagEntityResponse>;
   deleteUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Delete an existing role */
@@ -618,6 +700,7 @@ export type Mutation = {
   updateFileInfo: UploadFileEntityResponse;
   updateGame?: Maybe<GameEntityResponse>;
   updateGenre?: Maybe<GenreEntityResponse>;
+  updateLanguage?: Maybe<LanguageEntityResponse>;
   updateTag?: Maybe<TagEntityResponse>;
   updateUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Update an existing role */
@@ -680,6 +763,19 @@ export type MutationCreateGenreLocalizationArgs = {
 };
 
 
+export type MutationCreateLanguageArgs = {
+  data: LanguageInput;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationCreateLanguageLocalizationArgs = {
+  data?: InputMaybe<LanguageInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
 export type MutationCreateTagArgs = {
   data: TagInput;
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
@@ -727,6 +823,12 @@ export type MutationDeleteGameArgs = {
 
 
 export type MutationDeleteGenreArgs = {
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationDeleteLanguageArgs = {
   id: Scalars['ID'];
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
@@ -827,6 +929,13 @@ export type MutationUpdateGenreArgs = {
 };
 
 
+export type MutationUpdateLanguageArgs = {
+  data: LanguageInput;
+  id: Scalars['ID'];
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
 export type MutationUpdateTagArgs = {
   data: TagInput;
   id: Scalars['ID'];
@@ -892,6 +1001,8 @@ export type Query = {
   genres?: Maybe<GenreEntityResponseCollection>;
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
+  language?: Maybe<LanguageEntityResponse>;
+  languages?: Maybe<LanguageEntityResponseCollection>;
   me?: Maybe<UsersPermissionsMe>;
   tag?: Maybe<TagEntityResponse>;
   tags?: Maybe<TagEntityResponseCollection>;
@@ -969,6 +1080,20 @@ export type QueryI18NLocaleArgs = {
 
 export type QueryI18NLocalesArgs = {
   filters?: InputMaybe<I18NLocaleFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type QueryLanguageArgs = {
+  id?: InputMaybe<Scalars['ID']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type QueryLanguagesArgs = {
+  filters?: InputMaybe<LanguageFiltersInput>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
   pagination?: InputMaybe<PaginationArg>;
   sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
@@ -1413,9 +1538,9 @@ export type UsersPermissionsUserRelationResponseCollection = {
   data: Array<UsersPermissionsUserEntity>;
 };
 
-export type GameBasicFragment = { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined };
+export type GameBasicFragment = { __typename?: 'GameEntityResponseCollection', data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }> };
 
-export type GameDetailFragment = { __typename?: 'Game', name: string, slug: string, description?: string | null | undefined };
+export type GameDetailFragment = { __typename?: 'GameEntityResponseCollection', data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, description?: string | null | undefined, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }> };
 
 export type GameGalleryFragment = { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string };
 
@@ -1424,7 +1549,7 @@ export type GamesQueryVariables = Exact<{
 }>;
 
 
-export type GamesQuery = { __typename?: 'Query', games?: { __typename?: 'GameEntityResponseCollection', data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }>, meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } } } | null | undefined };
+export type GamesQuery = { __typename?: 'Query', games?: { __typename?: 'GameEntityResponseCollection', meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } }, data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }> } | null | undefined };
 
 export const GameGalleryFragmentDoc = gql`
     fragment GameGallery on UploadFile {
@@ -1437,35 +1562,47 @@ export const GameGalleryFragmentDoc = gql`
 }
     `;
 export const GameBasicFragmentDoc = gql`
-    fragment GameBasic on Game {
-  name
-  slug
-  summary
-  gallery {
-    data {
-      attributes {
-        ...GameGallery
+    fragment GameBasic on GameEntityResponseCollection {
+  data {
+    id
+    attributes {
+      name
+      slug
+      summary
+      gallery {
+        data {
+          attributes {
+            ...GameGallery
+          }
+        }
       }
     }
   }
 }
     ${GameGalleryFragmentDoc}`;
 export const GameDetailFragmentDoc = gql`
-    fragment GameDetail on Game {
-  name
-  slug
-  description
+    fragment GameDetail on GameEntityResponseCollection {
+  data {
+    id
+    attributes {
+      name
+      slug
+      description
+      gallery {
+        data {
+          attributes {
+            ...GameGallery
+          }
+        }
+      }
+    }
+  }
 }
-    `;
+    ${GameGalleryFragmentDoc}`;
 export const GamesDocument = gql`
     query games($locale: I18NLocaleCode!) {
   games(locale: $locale) {
-    data {
-      id
-      attributes {
-        ...GameBasic
-      }
-    }
+    ...GameBasic
     meta {
       pagination {
         total

@@ -2323,7 +2323,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
   version: 7.16.3
   resolution: "@babel/runtime@npm:7.16.3"
   dependencies:
@@ -3809,10 +3809,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@pixelrpg/graphql-sdk@workspace:packages/graphql-sdk":
+"@pixelrpg/graphql-sdk@workspace:^, @pixelrpg/graphql-sdk@workspace:packages/graphql-sdk":
   version: 0.0.0-use.local
   resolution: "@pixelrpg/graphql-sdk@workspace:packages/graphql-sdk"
   dependencies:
+    "@babel/runtime": ^7.16.5
     "@graphql-codegen/cli": 2.3.0
     "@graphql-codegen/typescript": ^2.4.1
     "@graphql-codegen/typescript-graphql-request": ^4.3.2
@@ -3862,8 +3863,9 @@ __metadata:
     "@babel/plugin-transform-typescript": ^7.16.1
     "@babel/preset-env": ^7.16.4
     "@babel/preset-typescript": ^7.16.0
-    "@babel/runtime": ^7.16.3
+    "@babel/runtime": ^7.16.5
     "@babel/runtime-corejs3": ^7.16.3
+    "@pixelrpg/graphql-sdk": "workspace:^"
     "@ribajs/artcodestudio": "workspace:*"
     "@ribajs/babel-config": "workspace:*"
     "@ribajs/bs5": "workspace:*"
@@ -3894,11 +3896,14 @@ __metadata:
     babel-plugin-array-includes: ^2.0.3
     bootstrap: ^5.1.3
     css-loader: ^6.5.1
+    dotenv: ^10.0.0
     eslint: ^8.4.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
     file-loader: ^6.2.0
     fork-ts-checker-webpack-plugin: ^6.5.0
+    graphql: ^16.2.0
+    graphql-request: ^3.7.0
     html-loader: ^3.0.1
     postcss-preset-env: ^7.0.1
     prettier: 2.5.1
@@ -14013,6 +14018,13 @@ __metadata:
   version: 16.1.0
   resolution: "graphql@npm:16.1.0"
   checksum: fa393f0e3d284a681606a3296aaa902e730036af89ae0142f91d72f7053c59627df65fc5fdac48f46d6c1f07f4406411ac4948b317621de729e3ccc8980dec1f
+  languageName: node
+  linkType: hard
+
+"graphql@npm:^16.2.0":
+  version: 16.2.0
+  resolution: "graphql@npm:16.2.0"
+  checksum: 204b5c9991b82561651a28b13dbb2e0e67514171a6a8c045ca4a527b944087344a14519d0426d661b49f2305584b390591abadc82b942f7b65e64e05cb31a584
   languageName: node
   linkType: hard
 

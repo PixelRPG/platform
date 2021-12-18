@@ -1,5 +1,18 @@
-fragment GameDetail on Game {
-  name
-  slug
-  description
+fragment GameDetail on GameEntityResponseCollection {
+  data {
+    id
+    attributes {
+      name
+      slug
+      description
+      # TODO use filter here gallery()
+      gallery {
+        data {
+          attributes {
+            ...GameGallery
+          }
+        }
+      }
+    }
+  }
 }

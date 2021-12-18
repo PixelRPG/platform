@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '../backend/.env' });
 const ribaWebpackConfig = require("@ribajs/webpack-config");
 const { resolve } = require("path");
 
@@ -31,6 +32,15 @@ const config = {
     extract: true,
     resolveUrl: "onlyImports",
   },
+  define: {
+    STRAPI_REMOTE_URL: JSON.stringify(process.env.STRAPI_REMOTE_URL),
+    STRAPI_LOCAL_URL: JSON.stringify(process.env.STRAPI_LOCAL_URL),
+    STRAPI_GRAPHQL_PATH: JSON.stringify(process.env.STRAPI_GRAPHQL_PATH),
+    // Do not use the backend api token in CSR
+    // STRAPI_API_TOKEN: JSON.stringify(process.env.STRAPI_API_TOKEN),
+    BACKEND_REMOTE_URL: JSON.stringify(process.env.BACKEND_REMOTE_URL),
+    BACKEND_LOCAL_URL: JSON.stringify(process.env.BACKEND_LOCAL_URL),
+  }
 };
 
 const webpackConfig = ribaWebpackConfig(config);

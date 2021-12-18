@@ -1,18 +1,20 @@
 import { PageComponent } from "@ribajs/ssr";
 import { TemplateFunction } from "@ribajs/core";
 
+import { GamesService, GameBasicFragment } from "../../../common";
+
 import pugTemplate from "./index.component.pug";
 
 export interface Scope {
   title: string;
-  content: string;
-  obj: any;
+  games: GameBasicFragment['data']
 }
 
 export class IndexPageComponent extends PageComponent {
   public static tagName = "index-page";
   public _debug = true;
   protected autobind = true;
+  protected games = new GamesService();
 
   protected head = {
     title: "You are on home",
@@ -20,11 +22,7 @@ export class IndexPageComponent extends PageComponent {
 
   scope: Scope = {
     title: "Hello from ssr",
-    content: "When you can see this, ssr works :)",
-    obj: {
-      foo: "bar",
-      note: "This is an example to test the json formatter",
-    },
+    games: []
   };
 
   static get observedAttributes(): string[] {
@@ -45,6 +43,9 @@ export class IndexPageComponent extends PageComponent {
   }
 
   protected async beforeBind() {
+    const locale = "en"; // TODO
+    const games = await this.games.list(locale);
+    this.scope.games = games.games?.data || [];
     await super.beforeBind();
   }
 

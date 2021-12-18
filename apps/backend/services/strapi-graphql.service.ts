@@ -4,7 +4,6 @@ import { getSdk } from "graphql-sdk/mod.ts";
 import { GraphQLClient } from 'graphql-request';
 
 export class StrapiGraphQLService {
-  public readonly config = strapiConfig;
   public sdk: ReturnType<typeof getSdk>;
 
   constructor() {
@@ -22,7 +21,7 @@ export class StrapiGraphQLService {
   }
 
   public getRemoteStrapiImageUrl(image: StrapiImage) {
-    const url = new URL(this.config.url.remote);
+    const url = new URL(strapiConfig.url.remote);
     url.pathname = url.pathname + image.url;
     return url.toString();
   }

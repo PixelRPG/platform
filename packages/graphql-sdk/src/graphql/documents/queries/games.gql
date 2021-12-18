@@ -2,12 +2,7 @@
 
 query games ($locale: I18NLocaleCode!) {
   games(locale: $locale) {
-    data {
-      id
-      attributes {
-        ...GameBasic
-      }
-    }
+    ...GameBasic
     meta {
       pagination {
         total

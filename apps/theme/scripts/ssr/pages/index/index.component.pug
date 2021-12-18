@@ -1,9 +1,11 @@
-.container-fluid.py-5.my-5.text-center
+.container-fluid.my-5
   .row
     .col-12
-      h1(ssr-rv-html='title')
-  section.row
-    .col-12
-      p(ssr-rv-html='content')
-  rv-logger(ssr-rv-log-me='content')
-  rv-logger(ssr-rv-log-me='obj | json')
+      h1 Hello World!
+      p.h2 Whatever you are doing here, what you see here has just been started to be crafted and it is unusable. But feel free to check back later or check out the <a href="https://github.com/PixelRPG/platform">source code</a> if you like.
+      hr.border-4
+  .row
+    .col-12.col-sm-6.col-md-5.col-lg-4.col-xl-3(rv-each-game="games")
+      img.img-fluid.w-100(rv-if="game.attributes.gallery.data" rv-src="game.attributes.gallery.data.0.attributes.url | strapi")
+      h2.h4.my-1(rv-text="game.attributes.name")
+      p(rv-html="game.attributes.summary")

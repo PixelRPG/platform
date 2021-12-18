@@ -44,6 +44,5 @@ lerna-debug.log*
 # Dist files
 assets/iconset
 assets/images/vendors
-assets/*.js
-assets/main.css
-assets/*.LICENSE.txt
+assets/csr
+assets/ssr

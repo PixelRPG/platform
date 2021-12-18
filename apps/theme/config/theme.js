@@ -17,10 +17,10 @@ export default (env) => {
       },
     },
     routes: [
-      // {
-      //   path: ["/"],
-      //   component: "index-page",
-      // },
+      {
+        path: ["/"],
+        component: "index-page",
+      },
       {
         path: ["/pages/:handle"],
         component: "pages-page",
