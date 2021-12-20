@@ -21,7 +21,7 @@ export class PRPGGameGridItemComponent extends Component {
   }
 
   public scope: PRPGGameGridItemComponentScope = {
-    displaySummary: false
+    displaySummary: true
   };
 
   protected connectedCallback() {

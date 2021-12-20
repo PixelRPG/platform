@@ -1,0 +1,12 @@
+#import "../fragments/games-basic.gql"
+
+query gameBasicList ($locale: I18NLocaleCode!) {
+  gameBasicList: games(locale: $locale) {
+    ...GameBasic
+    meta {
+      pagination {
+        total
+      }
+    }
+  }
+} 

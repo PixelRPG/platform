@@ -1,3 +1,4 @@
-img.img-fluid.w-100(rv-if="game.attributes.gallery.data" rv-src="game.attributes.gallery.data.0.attributes.url | strapi")
-h2.fs-16.my-1(rv-text="game.attributes.name")
-p(rv-if="displaySummary" rv-html="game.attributes.summary")
+a(rv-href="game.attributes.slug | prepend '/games/'")
+  img.img-fluid.w-100(rv-if="game.attributes.gallery.data" rv-src="game.attributes.gallery.data.0.attributes.url | strapi")
+  h2.fs-16.my-1(rv-text="game.attributes.name")
+  p(rv-if="displaySummary" rv-html="game.attributes.summary")

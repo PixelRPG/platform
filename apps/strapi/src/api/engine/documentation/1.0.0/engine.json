@@ -2382,6 +2382,9 @@
                                             "dynRPG": {
                                               "type": "boolean"
                                             },
+                                            "rating": {
+                                              "type": "integer"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -5180,6 +5183,9 @@
                                           "dynRPG": {
                                             "type": "boolean"
                                           },
+                                          "rating": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -7902,6 +7908,9 @@
                                           "dynRPG": {
                                             "type": "boolean"
                                           },
+                                          "rating": {
+                                            "type": "integer"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -10608,6 +10617,9 @@
                                           },
                                           "dynRPG": {
                                             "type": "boolean"
+                                          },
+                                          "rating": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -13586,6 +13598,9 @@
                                           },
                                           "dynRPG": {
                                             "type": "boolean"
+                                          },
+                                          "rating": {
+                                            "type": "integer"
                                           },
                                           "createdAt": {
                                             "type": "string",

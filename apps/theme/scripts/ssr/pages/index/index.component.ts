@@ -1,9 +1,9 @@
 import { PageComponent } from "@ribajs/ssr";
 import { TemplateFunction } from "@ribajs/core";
 
-import { GamesService, GameBasicFragment } from "../../../common";
-
 import pugTemplate from "./index.component.pug";
+
+import { GamesService, GameBasicFragment, Scalars } from "../../../common";
 
 export interface Scope {
   title: string;
@@ -17,11 +17,11 @@ export class IndexPageComponent extends PageComponent {
   protected games = new GamesService();
 
   protected head = {
-    title: "You are on home",
+    title: "PixelRPG",
   };
 
   scope: Scope = {
-    title: "Hello from ssr",
+    title: "PixelRPG",
     games: []
   };
 
@@ -43,9 +43,9 @@ export class IndexPageComponent extends PageComponent {
   }
 
   protected async beforeBind() {
-    const locale = "en"; // TODO
-    const games = await this.games.list(locale);
-    this.scope.games = games.games?.data || [];
+    const locale = typeof this.ctx.query?.locale === 'string' ? this.ctx.query.locale : "en";
+    const games = await this.games.list(locale as Scalars['I18NLocaleCode']);
+    this.scope.games = games?.data || [];
     await super.beforeBind();
   }
 

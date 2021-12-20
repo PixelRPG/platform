@@ -22,8 +22,8 @@ export default (env) => {
         component: "index-page",
       },
       {
-        path: ["/pages/:handle"],
-        component: "pages-page",
+        path: ["/games/:slug"],
+        component: "games-page",
       },
     ],
     errorRoutes: {

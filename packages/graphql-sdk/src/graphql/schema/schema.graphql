@@ -605,6 +605,7 @@ input GameFiltersInput {
   ageRecommendation: IntFilterInput
   source: StringFilterInput
   dynRPG: BooleanFilterInput
+  rating: IntFilterInput
   createdAt: DateTimeFilterInput
   updatedAt: DateTimeFilterInput
   publishedAt: DateTimeFilterInput
@@ -631,6 +632,7 @@ input GameInput {
   ageRecommendation: Int
   source: String
   dynRPG: Boolean
+  rating: Int
   publishedAt: DateTime
 }
 
@@ -650,6 +652,7 @@ type Game {
   ageRecommendation: Int!
   source: String
   dynRPG: Boolean
+  rating: Int
   createdAt: DateTime
   updatedAt: DateTime
   publishedAt: DateTime

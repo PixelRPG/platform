@@ -316,6 +316,7 @@ export type Game = {
   localizations?: Maybe<GameRelationResponseCollection>;
   name: Scalars['String'];
   publishedAt?: Maybe<Scalars['DateTime']>;
+  rating?: Maybe<Scalars['Int']>;
   slug: Scalars['String'];
   source?: Maybe<Scalars['String']>;
   summary: Scalars['String'];
@@ -386,6 +387,7 @@ export type GameFiltersInput = {
   not?: InputMaybe<GameFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<GameFiltersInput>>>;
   publishedAt?: InputMaybe<DateTimeFilterInput>;
+  rating?: InputMaybe<IntFilterInput>;
   slug?: InputMaybe<StringFilterInput>;
   source?: InputMaybe<StringFilterInput>;
   summary?: InputMaybe<StringFilterInput>;
@@ -406,6 +408,7 @@ export type GameInput = {
   genre?: InputMaybe<Scalars['ID']>;
   name?: InputMaybe<Scalars['String']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
+  rating?: InputMaybe<Scalars['Int']>;
   slug?: InputMaybe<Scalars['String']>;
   source?: InputMaybe<Scalars['String']>;
   summary?: InputMaybe<Scalars['String']>;
@@ -1544,12 +1547,20 @@ export type GameDetailFragment = { __typename?: 'GameEntityResponseCollection', 
 
 export type GameGalleryFragment = { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string };
 
-export type GamesQueryVariables = Exact<{
+export type GameBasicListQueryVariables = Exact<{
   locale: Scalars['I18NLocaleCode'];
 }>;
 
 
-export type GamesQuery = { __typename?: 'Query', games?: { __typename?: 'GameEntityResponseCollection', meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } }, data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }> } | null | undefined };
+export type GameBasicListQuery = { __typename?: 'Query', gameBasicList?: { __typename?: 'GameEntityResponseCollection', meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } }, data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, summary: string, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }> } | null | undefined };
+
+export type GameDetailQueryVariables = Exact<{
+  locale: Scalars['I18NLocaleCode'];
+  slug: Scalars['String'];
+}>;
+
+
+export type GameDetailQuery = { __typename?: 'Query', gameDetail?: { __typename?: 'GameEntityResponseCollection', meta: { __typename?: 'ResponseCollectionMeta', pagination: { __typename?: 'Pagination', total: number } }, data: Array<{ __typename?: 'GameEntity', id?: string | null | undefined, attributes?: { __typename?: 'Game', name: string, slug: string, description?: string | null | undefined, gallery?: { __typename?: 'UploadFileRelationResponseCollection', data: Array<{ __typename?: 'UploadFileEntity', attributes?: { __typename?: 'UploadFile', caption?: string | null | undefined, width?: number | null | undefined, height?: number | null | undefined, formats?: any | null | undefined, mime: string, url: string } | null | undefined }> } | null | undefined } | null | undefined }> } | null | undefined };
 
 export const GameGalleryFragmentDoc = gql`
     fragment GameGallery on UploadFile {
@@ -1599,9 +1610,9 @@ export const GameDetailFragmentDoc = gql`
   }
 }
     ${GameGalleryFragmentDoc}`;
-export const GamesDocument = gql`
-    query games($locale: I18NLocaleCode!) {
-  games(locale: $locale) {
+export const GameBasicListDocument = gql`
+    query gameBasicList($locale: I18NLocaleCode!) {
+  gameBasicList: games(locale: $locale) {
     ...GameBasic
     meta {
       pagination {
@@ -1611,6 +1622,18 @@ export const GamesDocument = gql`
   }
 }
     ${GameBasicFragmentDoc}`;
+export const GameDetailDocument = gql`
+    query gameDetail($locale: I18NLocaleCode!, $slug: String!) {
+  gameDetail: games(locale: $locale, filters: {slug: {eq: $slug}}) {
+    ...GameDetail
+    meta {
+      pagination {
+        total
+      }
+    }
+  }
+}
+    ${GameDetailFragmentDoc}`;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string) => Promise<T>;
 
@@ -1619,8 +1642,11 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName) => action();
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    games(variables: GamesQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GamesQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<GamesQuery>(GamesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'games');
+    gameBasicList(variables: GameBasicListQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GameBasicListQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GameBasicListQuery>(GameBasicListDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'gameBasicList');
+    },
+    gameDetail(variables: GameDetailQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<GameDetailQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GameDetailQuery>(GameDetailDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'gameDetail');
     }
   };
 }
