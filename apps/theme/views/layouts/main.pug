@@ -11,11 +11,11 @@ html(lang='de')
     include ../partials/favicons.pug
 
   body
-    include ../partials/crispify-filter.pug
-    include ../partials/header.pug
+    include ../partials/pixify-filter.pug
+    prpg-header
     router-view#main(listen-all-links="true")
       block content
-    include ../partials/footer.pug
+    prpg-footer
     script.
       window.env = {};
       window.env.STRAPI_REMOTE_URL = "#{env.STRAPI_REMOTE_URL}";

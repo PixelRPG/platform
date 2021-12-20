@@ -36,14 +36,17 @@
 
                 #{$property}: #{$value}px;
 
-                @if $value >= 16 {
+                @if $value % 16 == 0 {
                     font-family: $font-family-monospace-16px;
                 }
-                @else if $value >= 12 {
+                @else if $value % 12 == 0 {
+                    font-family: $font-family-monospace-12px;
+                }
+                @else if $value % 10 == 0 {
                     font-family: $font-family-monospace-12px;
                 }
                 @else {
-                    font-family: $font-family-monospace-10px;
+                    font-family: $font-family-monospace-16px;
                 }
             } @else {
                 #{$property}: $values;

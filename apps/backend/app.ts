@@ -1,5 +1,5 @@
-import { App } from "alosaur/mod.ts";
 import { getSettings } from "alosaur-theme/mod.ts";
+import { App } from "alosaur/mod.ts";
 import { appSettings, templateVars } from "./settings.ts";
 
 const bootstrap = async () => {
@@ -30,6 +30,7 @@ const bootstrap = async () => {
   app.useViewRender(viewRenderConfig);
 
   console.info("Deno version: ", Deno.version);
+  console.info("Start server with: ", serverSettings);
 
   app.listen(serverSettings);
 };

@@ -2,5 +2,24 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 p
 {
-    @extend .crispify;
+    @extend .pixify;
+}
+
+.fs-10 {
+    @include font-size(10px);
+}
+.fs-12 {
+    @include font-size(12px);
+}
+.fs-16 {
+    @include font-size(16px);
+}
+.fs-20 {
+    @include font-size(20px);
+}
+.fs-24 {
+    @include font-size(24px);
+}
+.fs-32 {
+    @include font-size(32px);
 }

@@ -72,7 +72,7 @@ $primary:       $orange;
 $secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;
-$warning:       $yellow;
+$warning:       $orange;
 $danger:        $red;
 $light:         $gray-200;
 $dark:          $gray-800;
@@ -561,7 +561,7 @@ $font-weight-bolder:          normal;
 
 $font-weight-base:            $font-weight-normal;
 
-$line-height-base:            1.5;
+$line-height-base:            1;
 $line-height-sm:              1;
 $line-height-lg:              2;
 
@@ -589,7 +589,7 @@ $headings-margin-bottom:      $spacer;
 $headings-font-family:        null;
 $headings-font-style:         null;
 $headings-font-weight:        $font-weight-normal;
-$headings-line-height:        1.2;
+$headings-line-height:        1;
 $headings-color:              null;
 // scss-docs-end headings-variables
 
@@ -608,19 +608,19 @@ $display-line-height: $headings-line-height;
 // scss-docs-end display-headings
 
 // scss-docs-start type-variables
-$lead-font-size:              $font-size-base * 1.25;
+$lead-font-size:              $font-size-base;
 $lead-font-weight:            300;
 
-$small-font-size:             .875em;
+$small-font-size:             10px;
 
-$sub-sup-font-size:           .75em;
+$sub-sup-font-size:           12px;
 
 $text-muted:                  $gray-600;
 
 $initialism-font-size:        $small-font-size;
 
 $blockquote-margin-y:         $spacer;
-$blockquote-font-size:        $font-size-base * 1.25;
+$blockquote-font-size:        $font-size-base * 1;
 $blockquote-footer-color:     $gray-600;
 $blockquote-footer-font-size: $small-font-size;
 
@@ -635,7 +635,7 @@ $legend-margin-bottom:        $spacer;
 $legend-font-size:            1$spacer;
 $legend-font-weight:          null;
 
-$mark-padding:                .2em;
+$mark-padding:                6px;
 
 $dt-font-weight:              $font-weight-bold;
 
@@ -989,7 +989,7 @@ $form-file-button-hover-bg:       shade-color($form-file-button-bg, 5%);
 
 // scss-docs-start form-floating-variables
 $form-floating-height:            add(3.5rem, $input-height-border);
-$form-floating-line-height:       1.25;
+$form-floating-line-height:       1.5;
 $form-floating-padding-x:         $input-padding-x;
 $form-floating-padding-y:         map-get($spacers, 2);
 $form-floating-input-padding-t:   1.625rem;
@@ -1121,10 +1121,10 @@ $navbar-dark-brand-hover-color:           $navbar-dark-active-color;
 // Dropdown menu container and contents.
 
 // scss-docs-start dropdown-variables
-$dropdown-min-width:                10rem;
+$dropdown-min-width:                160px;
 $dropdown-padding-x:                0;
 $dropdown-padding-y:                $spacer;
-$dropdown-spacer:                   .125rem;
+$dropdown-spacer:                   6px;
 $dropdown-font-size:                $font-size-base;
 $dropdown-color:                    $body-color;
 $dropdown-bg:                       $white;
@@ -1171,11 +1171,11 @@ $dropdown-dark-header-color:        $gray-500;
 // Pagination
 
 // scss-docs-start pagination-variables
-$pagination-padding-y:              .375rem;
-$pagination-padding-x:              .75rem;
+$pagination-padding-y:              6px;
+$pagination-padding-x:              8px;
 $pagination-padding-y-sm:           $spacer;
 $pagination-padding-x-sm:           $spacer;
-$pagination-padding-y-lg:           .75rem;
+$pagination-padding-y-lg:           8px;
 $pagination-padding-x-lg:           1$spacer;
 
 $pagination-color:                  $link-color;

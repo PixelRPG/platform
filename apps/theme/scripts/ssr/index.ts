@@ -4,8 +4,11 @@ import { Bs5IconComponent, bs5Module } from "@ribajs/bs5";
 import { artAndCodeStudioModule } from "@ribajs/artcodestudio";
 import { strapiModule } from "@ribajs/strapi";
 
+
+
 // Own
 import * as pageComponents from "./pages";
+import * as components from "./components";
 
 const riba = new Riba();
 
@@ -17,7 +20,7 @@ riba.configure({
 });
 
 // Regist custom components
-riba.module.component.regists({ ...pageComponents });
+riba.module.component.regists({ ...pageComponents, ...components });
 
 bs5Module.init();
 riba.module.component.regists({

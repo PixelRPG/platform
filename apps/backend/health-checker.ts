@@ -31,7 +31,7 @@ const startWatchInterval = (watchInterval: number) => {
     }, watchInterval);
 }
 
-const startWatch = (startDelay=15000, watchInterval=5000) => {
+const startWatch = (startDelay=30000, watchInterval=15000) => {
     console.log(`Start watcher in ${startDelay}ms..`);
     setTimeout(() => {
         startWatchInterval(watchInterval);
