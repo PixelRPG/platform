@@ -21,15 +21,12 @@
     "!apps/strapi",
     "packages/*",
     "!packages/riba",
-    "!packages/deno-pug",
-    "!packages/graphql-request",
     "packages/riba/packages/*",
     "packages/riba/backend/*",
     "packages/riba/infra/*",
     "!packages/riba/infra/cli",
     "!packages/riba/infra/doc",
-    "!packages/riba/infra/schematics",
-    "theme"
+    "!packages/riba/infra/schematics"
   ],
   "packageManager": "yarn@3.1.1",
   "devDependencies": {

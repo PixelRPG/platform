@@ -7,8 +7,23 @@
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "nestjs",
     "pixelrpg",
     "prpg",
-    "strapi"
+    "riba",
+    "ribajs",
+    "strapi",
+    "artandcode",
+    "artcodestudio",
+    "codegen",
+    "codegena",
+    "dtsgen",
+    "dtsgenerator",
+    "Garber",
+    "importmap",
+    "oapi",
+    "openapi",
+    "openapitools",
+    "typegen"
   ]
 }

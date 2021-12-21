@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '../backend/.env' });
+require('dotenv').config({ path: '../nest/.env' });
 const ribaWebpackConfig = require("@ribajs/webpack-config");
 const { resolve } = require("path");
 
