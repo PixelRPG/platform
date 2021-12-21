@@ -1,0 +1,8 @@
+fragment ImageOrVideo on UploadFile {
+  caption
+  width
+  height
+  formats
+  mime
+  url
+}

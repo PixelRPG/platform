@@ -1,7 +1,10 @@
 .container-fluid
   .row
-    .col-12
+    .col-12.col-xl-8.col-xxl-4.pixify
       h1(ssr-rv-text="game.name")
-  section.row
-    .col-12
       div(ssr-rv-html="game.description")
+    .col-12.col-xl-4.col-xxl-8
+      .row
+        .col-12.col-sm-6.col-xl-12.col-xxl-6.my-2(rv-each-item="game.gallery.data")
+          img.img-fluid.w-100.pixify(rv-if="item.attributes.mime | starts-with 'image'" rv-src="item.attributes | strapi-image-url 'original'")
+          video.img-fluid.w-100.pixify(rv-if="item.attributes.mime | starts-with 'video'" rv-src="item.attributes | strapi-image-url 'original'")

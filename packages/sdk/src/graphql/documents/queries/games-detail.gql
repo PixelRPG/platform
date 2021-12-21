@@ -1,0 +1,14 @@
+#import "../fragments/games-detail-entity.gql"
+
+query gamesDetail ($locale: I18NLocaleCode!, $slug: String!) {
+  games(locale: $locale, filters: { slug: { eq: $slug } } ) {
+    data {
+      ...GameDetailEntity
+    }
+    meta {
+      pagination {
+        total
+      }
+    }
+  }
+} 

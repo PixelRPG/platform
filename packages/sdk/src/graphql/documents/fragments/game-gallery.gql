@@ -1,0 +1,9 @@
+#import "./image-or-video.gql"
+
+fragment GameGallery on UploadFileRelationResponseCollection {
+  data {
+    attributes {
+      ...ImageOrVideo
+    }
+  }
+}

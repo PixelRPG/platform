@@ -1,8 +1,0 @@
-{
-  "imports": {
-    "graphql-request": "../graphql-request/mod.ts",
-    "graphql-tag": "https://cdn.esm.sh/graphql-tag",
-    "dotenv": "https://deno.land/x/dotenv/mod.ts",
-    "graphql-request/dist/types.dom": "../graphql-request/src/types.dom.ts"
-  }
-}

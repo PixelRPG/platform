@@ -3,11 +3,11 @@ import { TemplateFunction } from "@ribajs/core";
 
 import pugTemplate from "./index.component.pug";
 
-import { GamesService, GameBasicFragment, Scalars } from "../../../common";
+import { GamesService, GameBasicEntityFragment, Scalars } from "../../../common";
 
 export interface Scope {
   title: string;
-  games: GameBasicFragment['data']
+  games: GameBasicEntityFragment[];
 }
 
 export class IndexPageComponent extends PageComponent {

@@ -1,8 +1,0 @@
-{
-  "recommendations": [
-    "denoland.vscode-deno",
-    "laurencebahiirwa.deno-std-lib-snippets",
-    "arcanis.vscode-zipfs",
-    "dbaeumer.vscode-eslint"
-  ]
-}

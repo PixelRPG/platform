@@ -14,7 +14,7 @@ export const config: ThemeConfigFile = (env: string | undefined) => {
     },
     cache: {
       // One year cache on production
-      ttl: env === "production" ? 300000 : 30000,
+      ttl: env === "production" ? 300000 : 0,
       refresh: {
         active: false,
       },

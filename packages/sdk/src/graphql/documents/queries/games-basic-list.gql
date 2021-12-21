@@ -1,0 +1,14 @@
+#import "../fragments/games-basic-entity.gql"
+
+query gamesBasic ($locale: I18NLocaleCode!) {
+  games(locale: $locale) {
+    data {
+      ...GameBasicEntity
+    }
+    meta {
+      pagination {
+        total
+      }
+    }
+  }
+} 

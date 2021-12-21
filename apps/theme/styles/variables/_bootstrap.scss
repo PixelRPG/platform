@@ -352,7 +352,7 @@ $enable-cssgrid:              false;
 $enable-button-pointers:      true;
 $enable-rfs:                  true;
 $enable-validation-icons:     true;
-$enable-negative-margins:     false;
+$enable-negative-margins:     true;
 $enable-deprecation-messages: true;
 $enable-important-utilities:  true;
 
@@ -473,7 +473,7 @@ $grid-row-columns:            6;
 
 // Container padding
 
-$container-padding-x: $grid-gutter-width * .5;
+$container-padding-x: $grid-gutter-width;
 
 
 // Components

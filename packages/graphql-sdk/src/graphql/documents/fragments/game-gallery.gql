@@ -1,8 +1,0 @@
-fragment GameGallery on UploadFile {
-  caption
-  width
-  height
-  formats
-  mime
-  url
-}

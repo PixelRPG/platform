@@ -5,7 +5,7 @@ import template from "./prpg-game-grid-item.component.pug";
 import { GameBasicFragment } from "../../../common";
 
 interface PRPGGameGridItemComponentScope {
-  game?: GameBasicFragment['data'][0];
+  game: GameBasicFragment | null;
   displaySummary: boolean;
 }
 
@@ -21,6 +21,7 @@ export class PRPGGameGridItemComponent extends Component {
   }
 
   public scope: PRPGGameGridItemComponentScope = {
+    game: null,
     displaySummary: true
   };
 

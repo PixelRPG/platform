@@ -1,0 +1,11 @@
+#import "./game-gallery.gql"
+
+fragment GameDetail on Game {
+  name
+  slug
+  summary
+  description
+  gallery {
+    ...GameGallery
+  }
+} 

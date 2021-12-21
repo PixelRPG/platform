@@ -1,0 +1,19 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "deno.config": "./tsconfig.json",
+  "deno.importMap": "./imports.json",
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  },
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": "./../../.yarn/sdks",
+  "typescript.tsdk": "./../../.yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "editor.formatOnSave": true
+}

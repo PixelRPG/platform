@@ -1,0 +1,8 @@
+#import "./game-basic.gql"
+
+fragment GameBasicEntity on GameEntity {
+  id
+  attributes {
+    ...GameBasic
+  }
+}

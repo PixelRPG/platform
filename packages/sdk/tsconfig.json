@@ -1,0 +1,11 @@
+{
+  "extends": "@ribajs/tsconfig",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ESNext", "DOM"]
+  },
+  "files": ["./src/index.ts"]
+  // "include": ["src"]
+}

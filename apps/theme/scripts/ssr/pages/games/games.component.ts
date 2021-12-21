@@ -7,9 +7,7 @@ import { GamesService, GameDetailFragment, Scalars } from "../../../common";
 
 export interface Scope {
   title: string;
-  content: string;
-  params: GamesPageComponent["ctx"]["params"];
-  game?: GameDetailFragment['data'][0]['attributes'];
+  game: GameDetailFragment | null;
 }
 
 export class GamesPageComponent extends PageComponent {
@@ -19,19 +17,12 @@ export class GamesPageComponent extends PageComponent {
   protected games = new GamesService();
 
   scope: Scope = {
-    title: "[ params.handle | capitalize ]",
-    content: "<p>We are [ params.handle ]!</a>",
-    params: {},
-    game: undefined,
+    title: "",
+    game: null,
   };
 
   static get observedAttributes(): string[] {
     return [];
-  }
-
-  constructor() {
-    super();
-    this.scope.params = this.ctx.params;
   }
 
   protected connectedCallback() {
@@ -50,7 +41,7 @@ export class GamesPageComponent extends PageComponent {
     }
     const locale = typeof this.ctx.query?.locale === 'string' ? this.ctx.query.locale : "en";
     const game = await this.games.get(this.ctx.params?.slug, locale as Scalars['I18NLocaleCode']);
-    this.scope.game = game?.attributes;
+    this.scope.game = game?.data?.[0]?.attributes || null;
   }
 
   protected async afterBind() {
