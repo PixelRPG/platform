@@ -9,6 +9,7 @@
   "cSpell.words": [
     "artandcode",
     "artcodestudio",
+    "browserify",
     "codegen",
     "codegena",
     "dtsgen",
@@ -25,6 +26,7 @@
     "ribajs",
     "strapi",
     "typegen",
+    "whatwg",
     "yarnpkg"
   ]
 }

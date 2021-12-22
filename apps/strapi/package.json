@@ -10,13 +10,11 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "^4.0.0",
-    "@strapi/plugin-graphql": "^4.0.0",
-    "@strapi/plugin-i18n": "4.0.0",
-    "@strapi/plugin-users-permissions": "4.0.0",
-    "@strapi/strapi": "4.0.0",
-    "graphql": "^16.2.0",
-    "lodash": "^4.17.21",
+    "@strapi/plugin-documentation": "^4.0.2",
+    "@strapi/plugin-graphql": "^4.0.2",
+    "@strapi/plugin-i18n": "4.0.2",
+    "@strapi/plugin-users-permissions": "4.0.2",
+    "@strapi/strapi": "4.0.2",
     "sqlite3": "5.0.2"
   },
   "author": {

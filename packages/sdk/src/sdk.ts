@@ -48,33 +48,35 @@ export type BooleanFilterInput = {
 
 export type ComponentContentDownload = {
   __typename?: 'ComponentContentDownload';
-  architecture: Enum_Componentcontentdownload_Architecture;
+  architecture: Scalars['String'];
   easyRPG?: Maybe<Scalars['Boolean']>;
   file: UploadFileEntityResponse;
   id: Scalars['ID'];
   language?: Maybe<LanguageEntityResponse>;
-  platform: Enum_Componentcontentdownload_Platform;
+  platform: Scalars['String'];
   tested?: Maybe<Scalars['Boolean']>;
   version?: Maybe<Scalars['String']>;
 };
 
 export type ComponentContentDownloadFiltersInput = {
   and?: InputMaybe<Array<InputMaybe<ComponentContentDownloadFiltersInput>>>;
+  architecture?: InputMaybe<StringFilterInput>;
   easyRPG?: InputMaybe<BooleanFilterInput>;
   language?: InputMaybe<LanguageFiltersInput>;
   not?: InputMaybe<ComponentContentDownloadFiltersInput>;
   or?: InputMaybe<Array<InputMaybe<ComponentContentDownloadFiltersInput>>>;
+  platform?: InputMaybe<StringFilterInput>;
   tested?: InputMaybe<BooleanFilterInput>;
   version?: InputMaybe<StringFilterInput>;
 };
 
 export type ComponentContentDownloadInput = {
-  architecture?: InputMaybe<Enum_Componentcontentdownload_Architecture>;
+  architecture?: InputMaybe<Scalars['String']>;
   easyRPG?: InputMaybe<Scalars['Boolean']>;
   file?: InputMaybe<Scalars['ID']>;
   id?: InputMaybe<Scalars['ID']>;
   language?: InputMaybe<Scalars['ID']>;
-  platform?: InputMaybe<Enum_Componentcontentdownload_Platform>;
+  platform?: InputMaybe<Scalars['String']>;
   tested?: InputMaybe<Scalars['Boolean']>;
   version?: InputMaybe<Scalars['String']>;
 };
@@ -177,19 +179,6 @@ export type DeveloperRelationResponseCollection = {
   __typename?: 'DeveloperRelationResponseCollection';
   data: Array<DeveloperEntity>;
 };
-
-export enum Enum_Componentcontentdownload_Architecture {
-  Arm = 'arm',
-  None = 'none',
-  X64 = 'x64',
-  X86 = 'x86'
-}
-
-export enum Enum_Componentcontentdownload_Platform {
-  Linux = 'Linux',
-  MacOs = 'MacOS',
-  Windows = 'Windows'
-}
 
 export type Engine = {
   __typename?: 'Engine';

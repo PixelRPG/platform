@@ -1,6 +1,6 @@
 # PixelRPG Frontend Theme
 
-Monorepo of the PixelRPG Platform project build with Deno + Alosaur + Riba.js + Strapi.
+The Frontend of the platform
 
 ## License
 

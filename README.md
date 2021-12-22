@@ -1,6 +1,6 @@
 # PixelRPG Platform
 
-Monorepo of the PixelRPG Platform project build with Deno + Alosaur + Riba.js + Strapi.
+Monorepo of the PixelRPG Platform project build with Nest.js + Riba.js + Strapi.
 
 ## License
 
@@ -8,7 +8,7 @@ This project is licensed under the AGPL license.
 
 ## Backend
 
-See [apps/backend/README.md](./apps/backend).
+See [apps/nest/README.md](./apps/nest).
 
 ## Strapi
 

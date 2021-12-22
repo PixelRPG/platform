@@ -188,20 +188,9 @@ input JSONFilterInput {
   between: [JSON]
 }
 
-enum ENUM_COMPONENTCONTENTDOWNLOAD_PLATFORM {
-  Windows
-  MacOS
-  Linux
-}
-
-enum ENUM_COMPONENTCONTENTDOWNLOAD_ARCHITECTURE {
-  none
-  x86
-  x64
-  arm
-}
-
 input ComponentContentDownloadFiltersInput {
+  platform: StringFilterInput
+  architecture: StringFilterInput
   version: StringFilterInput
   tested: BooleanFilterInput
   easyRPG: BooleanFilterInput
@@ -213,8 +202,8 @@ input ComponentContentDownloadFiltersInput {
 
 input ComponentContentDownloadInput {
   id: ID
-  platform: ENUM_COMPONENTCONTENTDOWNLOAD_PLATFORM
-  architecture: ENUM_COMPONENTCONTENTDOWNLOAD_ARCHITECTURE
+  platform: String
+  architecture: String
   file: ID
   version: String
   tested: Boolean
@@ -224,8 +213,8 @@ input ComponentContentDownloadInput {
 
 type ComponentContentDownload {
   id: ID!
-  platform: ENUM_COMPONENTCONTENTDOWNLOAD_PLATFORM!
-  architecture: ENUM_COMPONENTCONTENTDOWNLOAD_ARCHITECTURE!
+  platform: String!
+  architecture: String!
   file: UploadFileEntityResponse!
   version: String
   tested: Boolean
