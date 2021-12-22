@@ -18,7 +18,6 @@
   },
   "workspaces": [
     "apps/*",
-    "!apps/strapi",
     "packages/*",
     "!packages/riba",
     "packages/riba/packages/*",
