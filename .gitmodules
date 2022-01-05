@@ -1,3 +1,6 @@
 [submodule "packages/riba"]
 	path = packages/riba
 	url = https://github.com/ribajs/riba.git
+[submodule "packages/gamecontroller.js"]
+	path = packages/gamecontroller.js
+	url = git@github.com:PixelRPG/gamecontroller.js.git
